@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RestaurantReports</string>
+    <string name="SoldQtyReport">Sold Qty Report</string>
+    <string name="GroupReport">Group Report</string>
+    <string name="CashReport">Cash Report</string>
+    <string name="MostRecentSalesReport">Most Recent Sales Report</string>
+</resources>
