@@ -4,4 +4,22 @@
     <string name="GroupReport">Group Report</string>
     <string name="CashReport">Cash Report</string>
     <string name="MostRecentSalesReport">Most Recent Sales Report</string>
+    <string name="item_Code">Item Code</string>
+    <string name="item_Name_">Item Name</string>
+    <string name="Gross">Gross</string>
+    <string name="QTY">QTY</string>
+    <string name="MODEL">Model</string>
+    <string name="Kind">Kind</string>
+    <string name="Group">Group</string>
+    <string name="Tax">Tax</string>
+    <string name="NetTotal">NetTotal</string>
+    <string name="NetPercent">NetPercent</string>
+    <string name="UnitPrice">Unit Price</string>
+    <string name="totalgross">Total Gross</string>
+    <string name="totaldiscount">Total Discount</string>
+    <string name="Totaltax">Total Tax</string>
+    <string name="fromdate">From Date</string>
+    <string name="TOdate">To Date</string>
+    <string name="casher">Casheir</string>
+
 </resources>
