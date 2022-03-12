@@ -16,9 +16,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,13 +41,16 @@ public class SoldQtyReport extends AppCompatActivity {
     SoldQtyReportAdapter soldqtyRep_Adapter;
     double totaldiscount_=0,totalgross_=0,Totaltax_=0,NetTotal_=0;
     ArrayList<String>Grouplist=new ArrayList<>();
+ ArrayList<SoldQtyReportModel>FiltersoldQtylist=new ArrayList<>();
+ LinearLayout group_lin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sold_qty_report);
         init();
         myCalendar = Calendar.getInstance();
-
+        group_lin.setVisibility(View.GONE);
         Date currentTimeAndDate = Calendar.getInstance().getTime();
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         String today = df.format(currentTimeAndDate);
@@ -54,7 +59,28 @@ public class SoldQtyReport extends AppCompatActivity {
         Group_Sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                
+                String d=Group_Sp.getSelectedItem().toString();
+                if(i!=0){
+                    for(int x=0;x<importData.soldQtyreportModelList.size();x++) {
+
+                        if (d.equals(importData.soldQtyreportModelList.get(x).getGroup()))
+
+                            FiltersoldQtylist.add(importData.soldQtyreportModelList.get(x));
+                    }
+                    Log.e("FiltersoldQtylist",FiltersoldQtylist.size()+"");
+                    try {
+                        fillRecApadter(FiltersoldQtylist);
+                        notify();
+                    }
+
+              catch (Exception exception){
+                  Log.e("exception==",exception.getMessage()+"");
+              }
+
+                }else
+                {
+                    fillRecApadter(importData.soldQtyreportModelList);
+                }
             }
 
             @Override
@@ -95,6 +121,7 @@ else             Pos_No ="";
     }
 
     void init() {
+        group_lin=findViewById(R.id.group_lin);
         totaldiscount=findViewById(R.id.totaldiscount);
         totalgross=findViewById(R.id.totalgross);
         Group_Sp=findViewById(R.id.Group_Sp);
@@ -144,24 +171,19 @@ else             Pos_No ="";
             @Override
             public void afterTextChanged(Editable editable) {
                 if (editable.toString().equals("fill")) {
-                    fillRecApadter();
+                    fillRecApadter(importData.soldQtyreportModelList);
                     Grouplist.clear();
                     Set<String> set = new HashSet<String>();
                     for(int i=0;i<importData.soldQtyreportModelList.size();i++) {
 
                         if(!Grouplist.contains(importData.soldQtyreportModelList.get(i)))
                             set.add(importData.soldQtyreportModelList.get(i).getGroup());
-                        totaldiscount_ += Double.parseDouble(importData.soldQtyreportModelList.get(i).getDiscount());
-                        totalgross_ += Double.parseDouble(importData.soldQtyreportModelList.get(i).getGross());
-                        Totaltax_ += Double.parseDouble(importData.soldQtyreportModelList.get(i).getTax());
-                        NetTotal_+=Double.parseDouble(importData.soldQtyreportModelList.get(i).getNetsales());
-                    }
+                                  }
+                    Grouplist.add(0,"");
                     Grouplist.addAll(set);
+                    group_lin.setVisibility(View.VISIBLE);
                     fillGroupSp();
-                    NetTotal.setText(NetTotal_+"");
-                    totaldiscount.setText(totaldiscount_+"");
-                            totalgross.setText(totalgross_+"");
-                    Totaltax.setText(Totaltax_+"");
+
                 }else{
 
                 }
@@ -187,13 +209,33 @@ else             Pos_No ="";
 
 
     }
-    private void  fillRecApadter(){
-        Log.e("fffffff===",importData.soldQtyreportModelList.size()+"");
+    private void  fillRecApadter(ArrayList<SoldQtyReportModel>soldQtyReportModels){
+        Log.e("fffffff===",soldQtyReportModels.size()+"");
         recyclerView.setLayoutManager(new LinearLayoutManager(SoldQtyReport.this));
 
-        soldqtyRep_Adapter    = new SoldQtyReportAdapter(importData.soldQtyreportModelList,SoldQtyReport.this);
+        soldqtyRep_Adapter    = new SoldQtyReportAdapter(soldQtyReportModels,SoldQtyReport.this);
         recyclerView.setAdapter(soldqtyRep_Adapter);
+        totaldiscount_ = 0;
+        totalgross_ = 0;
+        Totaltax_ = 0;
+        NetTotal_= 0;
+       for(int i=0;i<soldQtyReportModels.size();i++) {
 
+
+            totaldiscount_ += Double.parseDouble(soldQtyReportModels.get(i).getDiscount());
+            totalgross_ += Double.parseDouble(soldQtyReportModels.get(i).getGross());
+            Totaltax_ += Double.parseDouble(soldQtyReportModels.get(i).getTax());
+            NetTotal_+=Double.parseDouble(soldQtyReportModels.get(i).getNetsales());
+        }
+
+        NetTotal.setText(new DecimalFormat("###.###").format(NetTotal_));
+       // NetTotal.setText(NetTotal_+"");
+        totaldiscount.setText(new DecimalFormat("###.###").format(totaldiscount_));
+       // totaldiscount.setText(totaldiscount_+"");
+        totalgross.setText(new DecimalFormat("###.###").format(totalgross_));
+       // totalgross.setText(totalgross_+"");
+        Totaltax.setText(new DecimalFormat("###.###").format(Totaltax_));
+     //   Totaltax.setText(Totaltax_+"");
 
     }
     public DatePickerDialog.OnDateSetListener openDatePickerDialog(final int flag) {

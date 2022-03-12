@@ -32,7 +32,7 @@ public class SoldQtyReportAdapter extends RecyclerView.Adapter<SoldQtyReportAdap
 
         @Override
         public void onBindViewHolder(@NonNull SoldQtyReportAdapter.ViewHolder holder, int position) {
-                Log.e("SoldQtyReportAdapter99",List.get(position).getNetsales());
+            Log.e("position==",position+"");
                 holder.MODEL.setText(List.get(position).getModel());
                 holder. Kind.setText(List.get(position).getKind());
                 holder.  item_Code.setText(List.get(position).getItemCode());
@@ -47,7 +47,7 @@ public class SoldQtyReportAdapter extends RecyclerView.Adapter<SoldQtyReportAdap
                 holder.  Gross.setText(List.get(position).getGross());
                 holder. Grossperc.setText(List.get(position).getGrossPerc());
                 holder. Net.setText(List.get(position).getNetsales());
-
+                holder. group.setText(List.get(position).getGroup());
         }
 
         @Override
@@ -57,7 +57,7 @@ public class SoldQtyReportAdapter extends RecyclerView.Adapter<SoldQtyReportAdap
 
         class ViewHolder extends RecyclerView.ViewHolder {
                 TextView MODEL,Kind,item_Code,item_Name_,QTY,Hint,Tax,Service, ServiceTax,discount_
-                        ,UnitPrice,Gross,Grossperc,Net;
+                        ,UnitPrice,Gross,Grossperc,Net,group;
 
                 public ViewHolder(@NonNull View itemView) {
                         super(itemView);
@@ -75,7 +75,7 @@ public class SoldQtyReportAdapter extends RecyclerView.Adapter<SoldQtyReportAdap
                                 Gross=itemView.findViewById(R.id.Gross);
                                 Grossperc=itemView.findViewById(R.id.Grossperc);
                                 Net=itemView.findViewById(R.id.Net);
-
+                        group=itemView.findViewById(R.id.group);
 
                 }
         }

@@ -24,6 +24,7 @@
             android:exported="false" />
         <activity
             android:name=".SoldQtyReport"
+            android:windowSoftInputMode="adjustPan|adjustResize"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="false" />
         <activity
