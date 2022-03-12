@@ -1,9 +1,568 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#FCFCFD"
     android:layout_height="match_parent"
     tools:context=".SoldQtyReport">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="7"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:textColor="@color/blue2"
+            android:textSize="12sp"
+            android:gravity="center"
+
+            android:layout_weight="1.5"
+            android:text="@string/fromdate"/>
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="2dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fromdate"
+                android:drawableEnd="@drawable/ic_date_range_black_24dp"
+                android:inputType="date"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+
+                android:layout_weight="1.5"
+                android:text="@string/TOdate"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="2dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/todate"
+                    android:drawableEnd="@drawable/ic_date_range_black_24dp"
+                    android:inputType="date"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+
+                android:layout_weight="1.5"
+                android:text="@string/item_Name_"/>
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="2dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/itemname"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+
+                android:layout_weight="1.5"
+                android:text="@string/item_Code"/>
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="2dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/itemcode"
+                     android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+
+
+                android:layout_weight="1"
+                android:text="@string/POSNO"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/PosNO"
+                android:layout_height="match_parent"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:text="Preivew"
+                android:id="@+id/Preivew"
+                android:textSize="11dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primarycolor"
+                android:layout_height="match_parent">
+
+            </Button>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+
+
+                android:layout_weight="1"
+                android:text="@string/Group"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/Group_Sp"
+                android:layout_height="match_parent"/>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <com.google.android.material.card.MaterialCardView
+
+        android:layout_width="match_parent"
+        android:backgroundTint="#31AFB4"
+        android:visibility="gone"
+        android:layout_weight="7.5"
+        android:layout_marginBottom="5dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/customer_textInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="4dp">
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/basketListCard"
+        android:layout_width="match_parent"
+        android:layout_weight="2.6"
+        android:layout_marginBottom="5dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/customer_textInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="4dp">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="23dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/MODEL"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/Kind"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/item_Code"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/item_Name_"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/QTY"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/Hint"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+
+
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/Tax"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/Service"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/ServiceTax"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/discount_"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/UnitPrice"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/Gross"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+
+
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/Grossperc"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/Net"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@color/primarytextcolor" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/Rec"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+    </com.google.android.material.card.MaterialCardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="7"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <TableRow
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+
+
+                android:layout_weight="1"
+                android:text="@string/totalgross"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+
+                android:text="0.0"
+                android:layout_weight="1"
+                android:id="@+id/totalgross"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+
+                android:layout_weight="1"
+                android:text="@string/totaldiscount"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:text="0.0"
+                android:layout_weight="1"
+                android:id="@+id/totaldiscount"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+
+                android:layout_weight="1"
+                android:text="@string/Totaltax"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:text="0.0"
+                android:layout_weight="1"
+                android:id="@+id/Totaltax"/>
+
+
+        </TableRow>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <TableRow
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:layout_width="match_parent">
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="@string/NetTotal"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="18sp"
+                android:gravity="center"
+android:text="0.0"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:id="@+id/NetTotal"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:layout_weight="1" />
+            <TextView
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:id="@+id/POSNO_respon"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:id="@+id/soldQty_Respon"
+                android:layout_height="match_parent"/>
+
+
+        </TableRow>
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
