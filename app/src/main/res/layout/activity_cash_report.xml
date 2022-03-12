@@ -1,10 +1,771 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="fromDate"
+            type="String"
+            />
+        <variable
+            name="toDate"
+            type="String"
+            />
+    </data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".CashReport">
+    <LinearLayout
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:padding="2dp"
+        android:orientation="horizontal"
+        >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_blue"
+            android:layout_weight="0"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:text="@string/from_date"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/from_date_r"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:inputType="date"
+            android:padding="2dp"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_baseline_calendar_month_24"
+            android:background="@drawable/back_border"
+            android:textColor="@color/dark_blue"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:layout_weight="0"
+            android:fontFamily="@font/alegreya"
+            android:text="@string/to_date"
+            android:textColor="@color/dark_blue"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/to_date_r"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:inputType="date"
+            android:drawableRight="@drawable/ic_baseline_calendar_month_24"
+
+            android:padding="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/back_border"
+            android:textColor="@color/dark_blue"
+            android:textSize="14sp"  />
+
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/row3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:padding="2dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/dark_blue"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:fontFamily="@font/alegreya"
+            android:text="@string/userName"
+            android:textSize="14sp" />
+        <LinearLayout
+            android:id="@+id/row22"
+            android:padding="2dp"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/back_border"
+
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal"
+            >
+        <Spinner
+            android:id="@+id/salesManSpinner"
+            android:layout_width="match_parent"
+            android:textSize="15sp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+         />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/show_btn"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:fontFamily="@font/alegreya_sans_bold"
+            android:background="@drawable/show_btn"
+
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/show"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_width="match_parent">
+    <LinearLayout
+        android:id="@+id/row2233"
+        android:padding="2dp"
+        android:textSize="15sp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/back_border"
+
+        android:gravity="center"
+       android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:fontFamily="@font/alegreya"
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:text="@string/takeAway"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/takeAway_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/alegreya"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:fontFamily="@font/alegreya"
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:text="@string/dineIn"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/dineIn_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/alegreya"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:fontFamily="@font/alegreya"
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:text="@string/delevery"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/delevery_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/alegreya"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_height="1dp" android:layout_width="match_parent"/>
+
+
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:fontFamily="@font/alegreya"
+
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:text="@string/openCash"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/openCash_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/alegreya"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:text="@string/total"
+                android:fontFamily="@font/alegreya"
+
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/total_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/alegreya"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:fontFamily="@font/alegreya"
+
+                android:text="@string/service"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/service_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/alegreya"
+
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:background="@drawable/back_fill_dark"
+                android:gravity="center"
+                android:fontFamily="@font/alegreya"
+
+                android:text="@string/netCash"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/netCash_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:fontFamily="@font/alegreya"
+
+                android:gravity="center_vertical"
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_height="1dp"
+            android:layout_width="match_parent"/>
+
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:fontFamily="@font/alegreya"
+
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:text="@string/gross_sales"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/gross_sales_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/alegreya"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:fontFamily="@font/alegreya"
+
+                android:text="@string/netSales_notax"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/netSales_notax_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/alegreya"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:fontFamily="@font/alegreya"
+
+                android:text="@string/tax"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tax_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/alegreya"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:fontFamily="@font/alegreya"
+
+                android:layout_weight="2"
+                android:background="@drawable/back_fill_dark"
+                android:gravity="center"
+                android:text="@string/netSals"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/netSals_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:text="#00.000"
+                android:fontFamily="@font/alegreya"
+
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_height="1dp"
+            android:layout_width="match_parent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textColor="@color/dark_blue"
+            android:gravity="center_vertical"
+            android:padding="2dp"
+            android:fontFamily="@font/alegreya"
+
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/serviceDetail"
+            android:textSize="14sp"
+            />
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/back_edit_dark"
+            android:layout_margin="5dp">
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:fontFamily="@font/alegreya_sans_bold"
+
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:text="@string/takeAway"
+                android:textSize="14sp"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:fontFamily="@font/alegreya"
+
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:text="@string/total_notax"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/total_notax_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/alegreya"
+
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:fontFamily="@font/alegreya"
+
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:text="@string/service"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/service_takeAway_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/alegreya"
+
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+
+                android:text="#00.000"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:textColor="@color/dark_blue"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+
+                android:layout_height="1dp"
+                android:layout_width="match_parent"/>
+            <LinearLayout
+                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/dark_blue"
+                    android:layout_weight="2"
+                    android:background="@drawable/back_fillcolor"
+                    android:gravity="center"
+                    android:text="@string/dineIn"
+                    android:fontFamily="@font/alegreya_sans_bold"
+
+                    android:textSize="14sp"
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/dark_blue"
+                    android:layout_weight="2"
+                    android:background="@drawable/back_fillcolor"
+                    android:gravity="center"
+                    android:fontFamily="@font/alegreya"
+
+                    android:text="@string/total_notax"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/total_notax_text_dinein"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:focusable="false"
+                    android:fontFamily="@font/alegreya"
+
+                    android:gravity="center_vertical"
+                    android:text="#00.000"
+                    android:padding="2dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/dark_blue"
+                    android:layout_weight="2"
+                    android:background="@drawable/back_fillcolor"
+                    android:gravity="center"
+                    android:fontFamily="@font/alegreya"
+
+                    android:text="@string/service"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/service_takeAway_text_dineIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/alegreya"
+
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:focusable="false"
+                    android:gravity="center_vertical"
+
+                    android:text="#00.000"
+                    android:padding="2dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
+</layout>

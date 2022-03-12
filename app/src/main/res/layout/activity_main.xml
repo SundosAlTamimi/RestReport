@@ -17,7 +17,7 @@
         android:layout_marginHorizontal="26dp"
         android:layout_marginTop="10dp"
         app:cardCornerRadius="15dp"
-        android:layout_weight="1.7"
+        android:layout_weight="1"
         app:cardElevation="4dp">
         <ImageView
             android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                             <com.google.android.material.card.MaterialCardView
 
                                 android:layout_width="90dp"
-                                android:layout_height="120dp"
+                                android:layout_height="110dp"
                                 android:layout_marginStart="15dp"
                                 android:layout_marginBottom="15dp"
                                 android:background="@android:color/white"
@@ -98,7 +98,7 @@
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
                                     android:backgroundTint="@color/white"
-                                    android:src="@drawable/soldqty"
+                                    android:src="@drawable/solid_qty"
                                     android:translationZ="5dp"
                                    android:layout_gravity="center"/>
                             </com.google.android.material.card.MaterialCardView>
@@ -164,7 +164,7 @@
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
                                     android:backgroundTint="@color/white"
-                                    android:src="@drawable/group"
+                                    android:src="@drawable/group_image"
                                     android:translationZ="5dp"
                                     android:layout_gravity="center"/>
                             </com.google.android.material.card.MaterialCardView>
@@ -234,7 +234,7 @@
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
                                     android:backgroundTint="@color/white"
-                                    android:src="@drawable/cash"
+                                    android:src="@drawable/blog"
                                     android:translationZ="5dp"
                                     android:layout_gravity="center"/>
                             </com.google.android.material.card.MaterialCardView>
@@ -248,10 +248,11 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/Report4_parentLayout"
                             android:layout_width="match_parent"
+
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:layout_centerInParent="true"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
                             <com.google.android.material.card.MaterialCardView
                                 android:id="@+id/mostsalesepCard"
@@ -302,11 +303,10 @@
 
                                 <ImageView
                                     android:id="@+id/mostsalesimg"
-
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"
                                     android:backgroundTint="@color/white"
-                                    android:src="@drawable/sales"
+                                    android:src="@drawable/stats"
                                     android:translationZ="5dp"
                                     android:layout_gravity="center"/>
                             </com.google.android.material.card.MaterialCardView>
