@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="#FCFCFD"
     android:layout_height="match_parent"
+    android:background="#FCFCFD"
+    android:orientation="vertical"
     tools:context=".SoldQtyReport">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:layout_weight="7"
-        android:layout_height="match_parent">
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-
-        <TextView
             android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:textColor="@color/blue2"
-            android:textSize="12sp"
-            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-            android:layout_weight="1.5"
-            android:text="@string/fromdate"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                android:text="@string/fromdate"
+
+                android:textColor="@color/blue2"
+                android:textSize="12sp" />
+
             <com.google.android.material.textfield.TextInputLayout
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="2dp"
+                android:layout_weight="1"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fromdate"
-                android:drawableEnd="@drawable/ic_date_range_black_24dp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fromdate"
+                    android:layout_width="match_parent"
 
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/ic_date_range_black_24dp" />
             </com.google.android.material.textfield.TextInputLayout>
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
-                android:text="@string/TOdate"/>
+                android:gravity="center"
+                android:text="@string/TOdate"
+
+                android:textColor="@color/blue2"
+                android:textSize="12sp" />
+
             <com.google.android.material.textfield.TextInputLayout
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="2dp"
+                android:layout_weight="1"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
@@ -73,36 +77,38 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/todate"
-                    android:drawableEnd="@drawable/ic_date_range_black_24dp"
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/ic_date_range_black_24dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
-
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
-                android:text="@string/item_Name_"/>
+                android:gravity="center"
+                android:text="@string/item_Name_"
+
+                android:textColor="@color/blue2"
+                android:textSize="12sp" />
+
             <com.google.android.material.textfield.TextInputLayout
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="2dp"
+                android:layout_weight="1"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
@@ -110,27 +116,29 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/itemname"
-                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
             </com.google.android.material.textfield.TextInputLayout>
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
-                android:text="@string/item_Code"/>
+                android:gravity="center"
+                android:text="@string/item_Code"
+
+                android:textColor="@color/blue2"
+                android:textSize="12sp" />
+
             <com.google.android.material.textfield.TextInputLayout
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="2dp"
+                android:layout_weight="1"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
@@ -138,41 +146,44 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/itemcode"
-                     android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent">
+            android:orientation="horizontal">
 
             <TextView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
+                android:layout_weight="1"
                 android:gravity="center"
+                android:text="@string/casher"
 
 
-                android:layout_weight="1"
-                android:text="@string/casher"/>
+                android:textColor="@color/blue2"
+                android:textSize="12sp" />
+
             <Spinner
-                android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:id="@+id/casheir"
-                android:layout_height="match_parent"/>
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
             <Button
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Preivew"
-                android:textSize="11dp"
-                android:textColor="@color/white"
                 android:backgroundTint="@color/primarycolor"
-                android:layout_height="match_parent">
+                android:text="Preivew"
+                android:textColor="@color/white"
+                android:textSize="11dp">
 
             </Button>
 
@@ -180,31 +191,32 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <com.google.android.material.card.MaterialCardView
 
         android:layout_width="match_parent"
-        android:backgroundTint="#31AFB4"
-        android:visibility="gone"
-        android:layout_weight="7.5"
-        android:layout_marginBottom="5dp"
         android:layout_height="match_parent"
         android:layout_below="@+id/customer_textInput"
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="26dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="7.5"
+        android:backgroundTint="#31AFB4"
+        android:visibility="gone"
         app:cardCornerRadius="6dp"
-        app:cardElevation="4dp">
-    </com.google.android.material.card.MaterialCardView>
+        app:cardElevation="4dp"></com.google.android.material.card.MaterialCardView>
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/basketListCard"
         android:layout_width="match_parent"
-        android:layout_weight="2.6"
-        android:layout_marginBottom="5dp"
         android:layout_height="match_parent"
         android:layout_below="@+id/customer_textInput"
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="26dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="2.6"
         app:cardCornerRadius="15dp"
         app:cardElevation="4dp">
 
@@ -247,6 +259,7 @@
                         android:text="@string/Kind"
                         android:textColor="@color/primarytextcolor"
                         android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
@@ -339,7 +352,6 @@
                         android:textSize="14sp" />
 
 
-
                 </LinearLayout>
 
                 <TextView
@@ -359,130 +371,142 @@
 
 
     </com.google.android.material.card.MaterialCardView>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:layout_weight="7"
-        android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1"
-        android:layout_height="match_parent">
-        <TableRow
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_width="match_parent">
-            <TextView
-                android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow
                 android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
-
-
-                android:layout_weight="1"
-                android:text="@string/totalgross"/>
-
-            <TextView
                 android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
+                android:layout_weight="1">
 
-                android:text="0.0"
-                android:layout_weight="1"
-                android:id="@+id/totalgross"/>
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
-
-                android:layout_weight="1"
-                android:text="@string/totaldiscount"/>
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
-                android:text="0.0"
-                android:layout_weight="1"
-                android:id="@+id/totaldiscount"/>
-
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
-
-                android:layout_weight="1"
-                android:text="@string/Totaltax"/>
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
-                android:text="0.0"
-                android:layout_weight="1"
-                android:id="@+id/Totaltax"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/totalgross"
 
 
-        </TableRow>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1"
-        android:layout_height="match_parent">
-        <TableRow
+                    android:textColor="@color/blue2"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/totalgross"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+
+                    android:text="0.0"
+                    android:textColor="@color/blue2"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/totaldiscount"
+
+                    android:textColor="@color/blue2"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/totaldiscount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0.0"
+                    android:textColor="@color/blue2"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/Totaltax"
+
+                    android:textColor="@color/blue2"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/Totaltax"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0.0"
+                    android:textColor="@color/blue2"
+                    android:textSize="12sp" />
+
+
+            </TableRow>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:orientation="vertical">
 
-            android:layout_width="match_parent">
-            <TextView
-                android:layout_height="match_parent"
+            <TableRow
                 android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
-                android:visibility="invisible"
-                android:layout_weight="1" />
+                android:layout_height="match_parent"
 
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="18sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:text="@string/NetTotal"/>
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="18sp"
-                android:gravity="center"
-android:text="0.0"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:id="@+id/NetTotal"/>
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textColor="@color/blue2"
-                android:textSize="12sp"
-                android:gravity="center"
-                android:visibility="invisible"
-                android:layout_weight="1" />
+                android:layout_weight="1">
 
-        </TableRow>
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/blue2"
+                    android:textSize="12sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/NetTotal"
+                    android:textColor="@color/blue2"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/NetTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0.0"
+                    android:textColor="@color/blue2"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/blue2"
+                    android:textSize="12sp"
+                    android:visibility="invisible" />
+
+            </TableRow>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

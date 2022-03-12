@@ -13,7 +13,7 @@
     <string name="Group">Group</string>
     <string name="Tax">Tax</string>
     <string name="NetTotal">NetTotal</string>
-    <string name="NetPercent">NetPercent</string>
+    <string name="NetPercent">Net Percent</string>
     <string name="UnitPrice">Unit Price</string>
     <string name="totalgross">Total Gross</string>
     <string name="totaldiscount">Total Discount</string>
