@@ -30,12 +30,17 @@
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
             android:name=".GroupReport"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+            android:windowSoftInputMode="adjustPan|adjustResize"/>
         <activity
             android:name=".view.SoldQtyReport"
             android:exported="false"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+            android:name=".SoldQtyReport"
+            android:windowSoftInputMode="adjustPan|adjustResize"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:exported="false" />
         <activity
             android:name=".view.MainActivity"
             android:exported="true"
