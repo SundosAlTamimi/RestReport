@@ -20,6 +20,34 @@ class SoldQtyReportModel {
    String Fromdate;
    String Todate;
    String Casheir;
+   String  HINTS;
+   String SERVICE;
+
+   String SERVICETAX;
+
+   public String getSERVICETAX() {
+      return SERVICETAX;
+   }
+
+   public void setSERVICETAX(String SERVICETAX) {
+      this.SERVICETAX = SERVICETAX;
+   }
+
+   public String getSERVICE() {
+      return SERVICE;
+   }
+
+   public void setSERVICE(String SERVICE) {
+      this.SERVICE = SERVICE;
+   }
+
+   public String getHINTS() {
+      return HINTS;
+   }
+
+   public void setHINTS(String HINTS) {
+      this.HINTS = HINTS;
+   }
 
    public String getFromdate() {
       return Fromdate;

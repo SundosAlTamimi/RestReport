@@ -10,6 +10,9 @@
     <color name="primarycolor">#31AFB4</color>
     <color name="primarytextcolor">#355389</color>
     <color name="blue">#31AFB4</color>
+    <color name="dark_blue">#103164</color>
+    <color name="light_blue">#5131AFB4</color>
+
     <color name="grey">#9E9E9E</color>
     <color name="blue2">#103164</color>
 
