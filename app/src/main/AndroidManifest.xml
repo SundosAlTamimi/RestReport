@@ -43,7 +43,6 @@
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <uses-library
             android:name="org.apache.http.legacy"
