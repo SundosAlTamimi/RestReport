@@ -31,7 +31,7 @@ import java.util.Set;
 
 public class SoldQtyReport extends AppCompatActivity {
     ImportData importData;
-    EditText FromDate, ToDate;
+    TextView FromDate, ToDate;
     Spinner PosNo_Sp,Group_Sp;
     Button Preivew;
     Calendar myCalendar;
