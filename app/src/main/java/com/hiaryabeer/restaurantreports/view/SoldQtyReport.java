@@ -1,4 +1,4 @@
-package com.hiaryabeer.restaurantreports;
+package com.hiaryabeer.restaurantreports.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,7 +10,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,6 +17,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.hiaryabeer.restaurantreports.ImportData;
+import com.hiaryabeer.restaurantreports.R;
+import com.hiaryabeer.restaurantreports.adapters.SoldQtyReportAdapter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.hiaryabeer.restaurantreports;
+package com.hiaryabeer.restaurantreports.adapters;
 
 import android.content.Context;
 import android.util.Log;
@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.hiaryabeer.restaurantreports.R;
+import com.hiaryabeer.restaurantreports.model.SoldQtyReportModel;
+
 
 import java.util.ArrayList;
 

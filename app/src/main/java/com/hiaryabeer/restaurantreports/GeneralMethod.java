@@ -19,9 +19,10 @@ public class GeneralMethod {
     public  Context context;
     public  Activity myActivity;
     private Calendar myCalendar;
-    GeneralMethod(Context myContext,Activity activity){
+    public GeneralMethod(Context myContext, Activity activity){
         this.context=myContext;
         this.myActivity=activity;
+        myCalendar = Calendar.getInstance();
     }
     public  void setWindow(){
 
