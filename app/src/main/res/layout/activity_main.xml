@@ -16,9 +16,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="26dp"
         android:layout_marginTop="10dp"
+        android:layout_weight="1.7"
         app:cardCornerRadius="15dp"
-        android:layout_weight="1"
         app:cardElevation="4dp">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -27,59 +28,54 @@
         </ImageView>
     </com.google.android.material.card.MaterialCardView>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginTop="10dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/capture"
+        android:orientation="vertical">
 
-                        android:layout_weight="1"
-                        android:background="@drawable/capture"
-                        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Report1_parentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:layout_marginHorizontal="8dp">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/Report1_parentLayout"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginTop="10dp"
-                            android:layout_centerInParent="true"
-                            android:visibility="visible">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/soldqtyrepCard"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:background="@android:color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/sold_guideline"
+                app:layout_constraintTop_toTopOf="parent">
 
-                            <com.google.android.material.card.MaterialCardView
-                                android:id="@+id/soldqtyrepCard"
-                                android:layout_width="match_parent"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="24dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginBottom="5dp"
-                                android:background="@android:color/white"
-                                app:cardCornerRadius="20dp"
-                                app:cardElevation="3dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="@+id/sold_guideline"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.03">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/alegreya"
+                    android:gravity="center"
+                    android:lineHeight="34dp"
+                    android:text="@string/SoldQtyReport"
+                    android:textColor="@color/primarytextcolor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:fontFamily="@font/alegreya"
-                                    android:gravity="center"
-                                    android:lineHeight="34dp"
-                                    android:text="@string/SoldQtyReport"
-                                    android:textColor="@color/primarytextcolor"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
 
-                            </com.google.android.material.card.MaterialCardView>
-
-                            <androidx.constraintlayout.widget.Guideline
-                                android:id="@+id/sold_guideline"
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:orientation="vertical"
-                                app:layout_constraintGuide_begin="41dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sold_guideline"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.07" />
 
             <com.google.android.material.card.MaterialCardView
 
@@ -94,511 +90,495 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constrainedWidth="true">
 
-                                <ImageView
-                                    android:id="@+id/soldimg"
-                                    android:layout_width="60dp"
-                                    android:layout_height="60dp"
-                                    android:backgroundTint="@color/white"
-                                    android:src="@drawable/solid_qty"
-                                    android:translationZ="5dp"
-                                   android:layout_gravity="center"/>
-                            </com.google.android.material.card.MaterialCardView>
-
-
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/Report2_parentLayout"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_centerInParent="true"
-                            android:visibility="visible">
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:id="@+id/grouprepCard"
-                                android:layout_width="match_parent"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="24dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginEnd="15dp"
-                                android:layout_marginBottom="5dp"
-                                android:background="@android:color/white"
-                                app:cardCornerRadius="20dp"
-                                app:cardElevation="3dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintHorizontal_bias="0.025"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.0">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="@color/primarytextcolor"
-                                    android:text="@string/GroupReport"
-                                    android:layout_gravity="center"
-                                    android:gravity="center"
-                                    android:textStyle="bold"
-                                    android:fontFamily="@font/alegreya"
-                                    android:textSize="20dp"
-                                    android:lineHeight="34dp"
-                                    />
-
-                            </com.google.android.material.card.MaterialCardView>
-
-                            <com.google.android.material.card.MaterialCardView
-
-                                android:layout_width="90dp"
-                                android:layout_height="120dp"
-                                android:layout_marginStart="15dp"
-                                android:layout_marginBottom="15dp"
-                                android:background="@android:color/white"
-                                app:cardCornerRadius="90dp"
-                                app:cardElevation="5dp"
-
-                                app:layout_constraintVertical_bias="0.0">
-
-                                <ImageView
-                                    android:id="@+id/groupimg"
-                                    android:layout_width="60dp"
-                                    android:layout_height="60dp"
-                                    android:backgroundTint="@color/white"
-                                    android:src="@drawable/group_image"
-                                    android:translationZ="5dp"
-                                    android:layout_gravity="center"/>
-                            </com.google.android.material.card.MaterialCardView>
-
-
-
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/Report3_parentLayout"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_centerInParent="true"
-                            android:visibility="visible">
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:id="@+id/cashrepCard"
-                                android:layout_width="match_parent"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="24dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginEnd="15dp"
-                                android:layout_marginBottom="5dp"
-                                android:background="@android:color/white"
-                                app:cardCornerRadius="20dp"
-                                app:cardElevation="3dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintHorizontal_bias="0.025"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.0">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="@color/primarytextcolor"
-                                    android:text="@string/CashReport"
-                                    android:layout_gravity="center"
-                                    android:gravity="center"
-                                    android:textStyle="bold"
-                                    android:fontFamily="@font/alegreya"
-                                    android:textSize="20dp"
-                                    android:lineHeight="34dp"
-                                    />
-
-                            </com.google.android.material.card.MaterialCardView>
-
-
-
-
-                            <com.google.android.material.card.MaterialCardView
-
-                                android:layout_width="90dp"
-                                android:layout_height="120dp"
-                                android:layout_marginStart="15dp"
-                                android:layout_marginBottom="15dp"
-                                android:background="@android:color/white"
-                                app:cardCornerRadius="90dp"
-                                app:cardElevation="5dp"
-
-                                app:layout_constraintVertical_bias="0.0">
-
-                                <ImageView
-                                    android:id="@+id/cashimg"
-
-                                    android:layout_width="60dp"
-                                    android:layout_height="60dp"
-                                    android:backgroundTint="@color/white"
-                                    android:src="@drawable/blog"
-                                    android:translationZ="5dp"
-                                    android:layout_gravity="center"/>
-                            </com.google.android.material.card.MaterialCardView>
-
-
-
-
-
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/Report4_parentLayout"
-                            android:layout_width="match_parent"
-
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_centerInParent="true"
-                            android:visibility="gone">
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:id="@+id/mostsalesepCard"
-                                android:layout_width="match_parent"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="24dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginEnd="15dp"
-                                android:layout_marginBottom="5dp"
-                                android:background="@android:color/white"
-                                app:cardCornerRadius="20dp"
-                                app:cardElevation="3dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintHorizontal_bias="0.025"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.0">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="@color/primarytextcolor"
-                                    android:text="@string/MostRecentSalesReport"
-                                    android:layout_gravity="center"
-                                    android:gravity="center"
-                                    android:textStyle="bold"
-                                    android:fontFamily="@font/alegreya"
-                                    android:textSize="20dp"
-                                    android:lineHeight="34dp"
-                                    />
-
-                            </com.google.android.material.card.MaterialCardView>
-
-
-
-
-                            <com.google.android.material.card.MaterialCardView
-
-                                android:layout_width="90dp"
-                                android:layout_height="120dp"
-                                android:layout_marginStart="15dp"
-                                android:layout_marginBottom="15dp"
-                                android:background="@android:color/white"
-                                app:cardCornerRadius="90dp"
-                                app:cardElevation="5dp"
-
-                                app:layout_constraintVertical_bias="0.0">
-
-                                <ImageView
-                                    android:id="@+id/mostsalesimg"
-                                    android:layout_width="60dp"
-                                    android:layout_height="60dp"
-                                    android:backgroundTint="@color/white"
-                                    android:src="@drawable/stats"
-                                    android:translationZ="5dp"
-                                    android:layout_gravity="center"/>
-                            </com.google.android.material.card.MaterialCardView>
-
-
-
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    </LinearLayout>
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_weight="1"-->
-
-<!--        android:layout_height="match_parent">-->
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-
-<!--            android:background="@color/blue">-->
-
-<!--        </RelativeLayout>-->
-
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-<!--            android:background="@color/white">-->
-<!--            <RelativeLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:background="@color/white">-->
-
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:orientation="vertical"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:layout_weight="1"-->
-
-<!--                    android:layout_height="match_parent">-->
-
-<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                        android:id="@+id/Report1_parentLayout"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:layout_centerInParent="true"-->
-<!--                        android:visibility="visible">-->
-
-<!--                        <com.google.android.material.card.MaterialCardView-->
-<!--                            android:id="@+id/soldqtyrepCard"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="80dp"-->
-<!--                            android:layout_marginStart="24dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:layout_marginEnd="15dp"-->
-<!--                            android:layout_marginBottom="5dp"-->
-<!--                            android:background="@android:color/white"-->
-<!--                            app:cardCornerRadius="20dp"-->
-<!--                            app:cardElevation="3dp"-->
-<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                            app:layout_constraintHorizontal_bias="0.025"-->
-<!--                            app:layout_constraintStart_toStartOf="@+id/sold_guideline"-->
-<!--                            app:layout_constraintTop_toTopOf="parent"-->
-<!--                            app:layout_constraintVertical_bias="0.0">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:textColor="@color/primarytextcolor"-->
-<!--                                android:text="@string/SoldQtyReport"-->
-<!--                                android:layout_gravity="center"-->
-<!--                                android:gravity="center"-->
-<!--                                android:textStyle="bold"-->
-<!--                                android:fontFamily="@font/alegreya"-->
-<!--                                android:textSize="20dp"-->
-<!--                                android:lineHeight="34dp"-->
-<!--                                />-->
-
-<!--                        </com.google.android.material.card.MaterialCardView>-->
-
-<!--                        <androidx.constraintlayout.widget.Guideline-->
-<!--                            android:id="@+id/sold_guideline"-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="0dp"-->
-<!--                            android:orientation="vertical"-->
-<!--                            app:layout_constraintGuide_percent="0.1" />-->
-
-<!--                        <de.hdodenhof.circleimageview.CircleImageView-->
-<!--                            android:id="@+id/soldimg"-->
-<!--                            android:background="@color/white"-->
-<!--                            android:layout_width="60dp"-->
-<!--                            android:layout_height="60dp"-->
-<!--                            android:backgroundTint="@color/white"-->
-<!--                            android:layout_marginStart="5dp"-->
-<!--                            android:src="@drawable/soldqty"-->
-<!--                            app:layout_constraintBottom_toBottomOf="@+id/soldqtyrepCard"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="@+id/soldqtyrepCard"-->
-<!--                            android:translationZ="5dp"-->
-<!--                            />-->
-
-
-
-
-<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                        android:id="@+id/Report2_parentLayout"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:layout_centerInParent="true"-->
-<!--                        android:visibility="visible">-->
-
-<!--                        <com.google.android.material.card.MaterialCardView-->
-<!--                            android:id="@+id/grouprepCard"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="80dp"-->
-<!--                            android:layout_marginStart="24dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:layout_marginEnd="15dp"-->
-<!--                            android:layout_marginBottom="5dp"-->
-<!--                            android:background="@android:color/white"-->
-<!--                            app:cardCornerRadius="20dp"-->
-<!--                            app:cardElevation="3dp"-->
-<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                            app:layout_constraintHorizontal_bias="0.025"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent"-->
-<!--                            app:layout_constraintVertical_bias="0.0">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:textColor="@color/primarytextcolor"-->
-<!--                                android:text="@string/GroupReport"-->
-<!--                                android:layout_gravity="center"-->
-<!--                                android:gravity="center"-->
-<!--                                android:textStyle="bold"-->
-<!--                                android:fontFamily="@font/alegreya"-->
-<!--                                android:textSize="20dp"-->
-<!--                                android:lineHeight="34dp"-->
-<!--                                />-->
-
-<!--                        </com.google.android.material.card.MaterialCardView>-->
-
-
-<!--                        <de.hdodenhof.circleimageview.CircleImageView-->
-<!--                            android:id="@+id/groupimg"-->
-<!--                            android:background="@color/white"-->
-<!--                            android:layout_width="60dp"-->
-<!--                            android:layout_height="60dp"-->
-<!--                            android:layout_marginStart="5dp"-->
-<!--                            android:src="@drawable/group"-->
-<!--                            app:layout_constraintBottom_toBottomOf="@+id/grouprepCard"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="@+id/grouprepCard"-->
-<!--                            android:translationZ="5dp"-->
-<!--                            />-->
-
-
-<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
-<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                        android:id="@+id/Report3_parentLayout"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:layout_centerInParent="true"-->
-<!--                        android:visibility="visible">-->
-
-<!--                        <com.google.android.material.card.MaterialCardView-->
-<!--                            android:id="@+id/cashrepCard"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="80dp"-->
-<!--                            android:layout_marginStart="24dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:layout_marginEnd="15dp"-->
-<!--                            android:layout_marginBottom="5dp"-->
-<!--                            android:background="@android:color/white"-->
-<!--                            app:cardCornerRadius="20dp"-->
-<!--                            app:cardElevation="3dp"-->
-<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                            app:layout_constraintHorizontal_bias="0.025"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent"-->
-<!--                            app:layout_constraintVertical_bias="0.0">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:textColor="@color/primarytextcolor"-->
-<!--                                android:text="@string/CashReport"-->
-<!--                                android:layout_gravity="center"-->
-<!--                                android:gravity="center"-->
-<!--                                android:textStyle="bold"-->
-<!--                                android:fontFamily="@font/alegreya"-->
-<!--                                android:textSize="20dp"-->
-<!--                                android:lineHeight="34dp"-->
-<!--                                />-->
-
-<!--                        </com.google.android.material.card.MaterialCardView>-->
-
-
-
-<!--                        <de.hdodenhof.circleimageview.CircleImageView-->
-<!--                            android:id="@+id/cashimg"-->
-<!--                            android:background="@color/white"-->
-<!--                            android:layout_width="60dp"-->
-<!--                            android:layout_height="60dp"-->
-<!--                            android:layout_marginStart="5dp"-->
-<!--                            android:src="@drawable/cash"-->
-<!--                            app:layout_constraintBottom_toBottomOf="@+id/cashrepCard"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="@+id/cashrepCard"-->
-<!--                            android:translationZ="5dp"-->
-<!--                            />-->
-
-
-
-
-<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
-<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                        android:id="@+id/Report4_parentLayout"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:layout_centerInParent="true"-->
-<!--                        android:visibility="visible">-->
-
-<!--                        <com.google.android.material.card.MaterialCardView-->
-<!--                            android:id="@+id/mostsalesepCard"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="80dp"-->
-<!--                            android:layout_marginStart="24dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:layout_marginEnd="15dp"-->
-<!--                            android:layout_marginBottom="5dp"-->
-<!--                            android:background="@android:color/white"-->
-<!--                            app:cardCornerRadius="20dp"-->
-<!--                            app:cardElevation="3dp"-->
-<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                            app:layout_constraintHorizontal_bias="0.025"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent"-->
-<!--                            app:layout_constraintVertical_bias="0.0">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:textColor="@color/primarytextcolor"-->
-<!--                                android:text="@string/MostRecentSalesReport"-->
-<!--                                android:layout_gravity="center"-->
-<!--                                android:gravity="center"-->
-<!--                                android:textStyle="bold"-->
-<!--                                android:fontFamily="@font/alegreya"-->
-<!--                                android:textSize="20dp"-->
-<!--                                android:lineHeight="34dp"-->
-<!--                                />-->
-
-<!--                        </com.google.android.material.card.MaterialCardView>-->
-
-
-
-<!--                        <de.hdodenhof.circleimageview.CircleImageView-->
-<!--                            android:id="@+id/mostsalesimg"-->
-<!--                            android:background="@color/white"-->
-<!--                            android:layout_width="60dp"-->
-<!--                            android:layout_height="60dp"-->
-<!--                            android:layout_marginStart="5dp"-->
-<!--                            android:src="@drawable/sales"-->
-<!--                            app:layout_constraintBottom_toBottomOf="@+id/mostsalesepCard"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="@+id/mostsalesepCard"-->
-<!--                            android:translationZ="5dp"-->
-<!--                            />-->
-
-
-
-
-<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--                </LinearLayout>-->
-<!--            </RelativeLayout>-->
-<!--        </RelativeLayout>-->
-<!--    </LinearLayout>-->
+                <ImageView
+                    android:id="@+id/soldimg"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/solid_qty"
+                    android:translationZ="5dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Report2_parentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:layout_marginHorizontal="8dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/grouprepCard"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:background="@android:color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/alegreya"
+                    android:gravity="center"
+                    android:lineHeight="34dp"
+                    android:text="@string/GroupReport"
+                    android:textColor="@color/primarytextcolor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.07" />
+
+            <com.google.android.material.card.MaterialCardView
+
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@android:color/white"
+                app:cardCornerRadius="45dp"
+                app:cardElevation="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/groupimg"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/group_image"
+                    android:translationZ="5dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Report3_parentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:layout_marginHorizontal="8dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cashrepCard"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:background="@android:color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline2"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/alegreya"
+                    android:gravity="center"
+                    android:lineHeight="34dp"
+                    android:text="@string/CashReport"
+                    android:textColor="@color/primarytextcolor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.07" />
+
+            <com.google.android.material.card.MaterialCardView
+
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@android:color/white"
+                app:cardCornerRadius="45dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/cashimg"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/blog"
+                     />
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Report4_parentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_marginHorizontal="8dp"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mostsalesepCard"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:background="@android:color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline3"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/alegreya"
+                    android:gravity="center"
+                    android:lineHeight="34dp"
+                    android:text="@string/MostRecentSalesReport"
+                    android:textColor="@color/primarytextcolor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.07" />
+
+            <com.google.android.material.card.MaterialCardView
+
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@android:color/white"
+                app:cardCornerRadius="45dp"
+                app:cardElevation="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/mostsalesimg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/sales"
+                    android:translationZ="5dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_weight="1"-->
+
+    <!--        android:layout_height="match_parent">-->
+    <!--        <RelativeLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_weight="1"-->
+
+    <!--            android:background="@color/blue">-->
+
+    <!--        </RelativeLayout>-->
+
+    <!--        <RelativeLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@color/white">-->
+    <!--            <RelativeLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:background="@color/white">-->
+
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:layout_marginTop="10dp"-->
+    <!--                    android:layout_weight="1"-->
+
+    <!--                    android:layout_height="match_parent">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:id="@+id/Report1_parentLayout"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:layout_weight="1"-->
+    <!--                        android:layout_centerInParent="true"-->
+    <!--                        android:visibility="visible">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/soldqtyrepCard"-->
+    <!--                            android:layout_width="match_parent"-->
+    <!--                            android:layout_height="80dp"-->
+    <!--                            android:layout_marginStart="24dp"-->
+    <!--                            android:layout_marginTop="5dp"-->
+    <!--                            android:layout_marginEnd="15dp"-->
+    <!--                            android:layout_marginBottom="5dp"-->
+    <!--                            android:background="@android:color/white"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:cardElevation="3dp"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintHorizontal_bias="0.025"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/sold_guideline"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:layout_constraintVertical_bias="0.0">-->
+
+    <!--                            <TextView-->
+    <!--                                android:layout_width="match_parent"-->
+    <!--                                android:layout_height="wrap_content"-->
+    <!--                                android:textColor="@color/primarytextcolor"-->
+    <!--                                android:text="@string/SoldQtyReport"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:gravity="center"-->
+    <!--                                android:textStyle="bold"-->
+    <!--                                android:fontFamily="@font/alegreya"-->
+    <!--                                android:textSize="20dp"-->
+    <!--                                android:lineHeight="34dp"-->
+    <!--                                />-->
+
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <androidx.constraintlayout.widget.Guideline-->
+    <!--                            android:id="@+id/sold_guideline"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="0dp"-->
+    <!--                            android:orientation="vertical"-->
+    <!--                            app:layout_constraintGuide_percent="0.1" />-->
+
+    <!--                        <de.hdodenhof.circleimageview.CircleImageView-->
+    <!--                            android:id="@+id/soldimg"-->
+    <!--                            android:background="@color/white"-->
+    <!--                            android:layout_width="60dp"-->
+    <!--                            android:layout_height="60dp"-->
+    <!--                            android:backgroundTint="@color/white"-->
+    <!--                            android:layout_marginStart="5dp"-->
+    <!--                            android:src="@drawable/soldqty"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="@+id/soldqtyrepCard"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="@+id/soldqtyrepCard"-->
+    <!--                            android:translationZ="5dp"-->
+    <!--                            />-->
+
+
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:id="@+id/Report2_parentLayout"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:layout_weight="1"-->
+    <!--                        android:layout_centerInParent="true"-->
+    <!--                        android:visibility="visible">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/grouprepCard"-->
+    <!--                            android:layout_width="match_parent"-->
+    <!--                            android:layout_height="80dp"-->
+    <!--                            android:layout_marginStart="24dp"-->
+    <!--                            android:layout_marginTop="5dp"-->
+    <!--                            android:layout_marginEnd="15dp"-->
+    <!--                            android:layout_marginBottom="5dp"-->
+    <!--                            android:background="@android:color/white"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:cardElevation="3dp"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintHorizontal_bias="0.025"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:layout_constraintVertical_bias="0.0">-->
+
+    <!--                            <TextView-->
+    <!--                                android:layout_width="match_parent"-->
+    <!--                                android:layout_height="wrap_content"-->
+    <!--                                android:textColor="@color/primarytextcolor"-->
+    <!--                                android:text="@string/GroupReport"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:gravity="center"-->
+    <!--                                android:textStyle="bold"-->
+    <!--                                android:fontFamily="@font/alegreya"-->
+    <!--                                android:textSize="20dp"-->
+    <!--                                android:lineHeight="34dp"-->
+    <!--                                />-->
+
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+
+    <!--                        <de.hdodenhof.circleimageview.CircleImageView-->
+    <!--                            android:id="@+id/groupimg"-->
+    <!--                            android:background="@color/white"-->
+    <!--                            android:layout_width="60dp"-->
+    <!--                            android:layout_height="60dp"-->
+    <!--                            android:layout_marginStart="5dp"-->
+    <!--                            android:src="@drawable/group"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="@+id/grouprepCard"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="@+id/grouprepCard"-->
+    <!--                            android:translationZ="5dp"-->
+    <!--                            />-->
+
+
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:id="@+id/Report3_parentLayout"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:layout_weight="1"-->
+    <!--                        android:layout_centerInParent="true"-->
+    <!--                        android:visibility="visible">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/cashrepCard"-->
+    <!--                            android:layout_width="match_parent"-->
+    <!--                            android:layout_height="80dp"-->
+    <!--                            android:layout_marginStart="24dp"-->
+    <!--                            android:layout_marginTop="5dp"-->
+    <!--                            android:layout_marginEnd="15dp"-->
+    <!--                            android:layout_marginBottom="5dp"-->
+    <!--                            android:background="@android:color/white"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:cardElevation="3dp"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintHorizontal_bias="0.025"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:layout_constraintVertical_bias="0.0">-->
+
+    <!--                            <TextView-->
+    <!--                                android:layout_width="match_parent"-->
+    <!--                                android:layout_height="wrap_content"-->
+    <!--                                android:textColor="@color/primarytextcolor"-->
+    <!--                                android:text="@string/CashReport"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:gravity="center"-->
+    <!--                                android:textStyle="bold"-->
+    <!--                                android:fontFamily="@font/alegreya"-->
+    <!--                                android:textSize="20dp"-->
+    <!--                                android:lineHeight="34dp"-->
+    <!--                                />-->
+
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+
+    <!--                        <de.hdodenhof.circleimageview.CircleImageView-->
+    <!--                            android:id="@+id/cashimg"-->
+    <!--                            android:background="@color/white"-->
+    <!--                            android:layout_width="60dp"-->
+    <!--                            android:layout_height="60dp"-->
+    <!--                            android:layout_marginStart="5dp"-->
+    <!--                            android:src="@drawable/cash"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="@+id/cashrepCard"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="@+id/cashrepCard"-->
+    <!--                            android:translationZ="5dp"-->
+    <!--                            />-->
+
+
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:id="@+id/Report4_parentLayout"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:layout_weight="1"-->
+    <!--                        android:layout_centerInParent="true"-->
+    <!--                        android:visibility="visible">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/mostsalesepCard"-->
+    <!--                            android:layout_width="match_parent"-->
+    <!--                            android:layout_height="80dp"-->
+    <!--                            android:layout_marginStart="24dp"-->
+    <!--                            android:layout_marginTop="5dp"-->
+    <!--                            android:layout_marginEnd="15dp"-->
+    <!--                            android:layout_marginBottom="5dp"-->
+    <!--                            android:background="@android:color/white"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:cardElevation="3dp"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintHorizontal_bias="0.025"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:layout_constraintVertical_bias="0.0">-->
+
+    <!--                            <TextView-->
+    <!--                                android:layout_width="match_parent"-->
+    <!--                                android:layout_height="wrap_content"-->
+    <!--                                android:textColor="@color/primarytextcolor"-->
+    <!--                                android:text="@string/MostRecentSalesReport"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:gravity="center"-->
+    <!--                                android:textStyle="bold"-->
+    <!--                                android:fontFamily="@font/alegreya"-->
+    <!--                                android:textSize="20dp"-->
+    <!--                                android:lineHeight="34dp"-->
+    <!--                                />-->
+
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+
+    <!--                        <de.hdodenhof.circleimageview.CircleImageView-->
+    <!--                            android:id="@+id/mostsalesimg"-->
+    <!--                            android:background="@color/white"-->
+    <!--                            android:layout_width="60dp"-->
+    <!--                            android:layout_height="60dp"-->
+    <!--                            android:layout_marginStart="5dp"-->
+    <!--                            android:src="@drawable/sales"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="@+id/mostsalesepCard"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="@+id/mostsalesepCard"-->
+    <!--                            android:translationZ="5dp"-->
+    <!--                            />-->
+
+
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--                </LinearLayout>-->
+    <!--            </RelativeLayout>-->
+    <!--        </RelativeLayout>-->
+    <!--    </LinearLayout>-->
 
 </LinearLayout>
