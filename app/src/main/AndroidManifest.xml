@@ -42,7 +42,6 @@
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
 
-                <category android:name="android.intent.category.LAUNCHER" />
         </activity>
         <uses-library
             android:name="org.apache.http.legacy"
