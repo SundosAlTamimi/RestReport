@@ -15,8 +15,8 @@
     <string name="Group">Group</string>
     <string name="Tax">Tax</string>
     <string name="NetTotal">NetTotal</string>
+    <string name="NetPercent">Net Percent</string>
     <string name="Net">Net</string>
-    <string name="NetPercent">NetPercent</string>
     <string name="UnitPrice">Unit Price</string>
     <string name="totalgross">Total Gross</string>
     <string name="totaldiscount">Total Discount</string>
@@ -29,4 +29,21 @@
     <string name="Service">Service</string>
     <string name="discount_">Discount</string>
     <string name="ServiceTax">Service Tax</string>
+    <string name="from_date">From Date</string>
+    <string name="to_date">To Date</string>
+    <string name="userName">User Name</string>
+    <string name="show">Show</string>
+    <string name="takeAway">Take Away</string>
+    <string name="dineIn">Dine In</string>
+    <string name="delevery">Delevery</string>
+    <string name="openCash">Open Cash</string>
+    <string name="total">Total</string>
+    <string name="service">Service</string>
+    <string name="netCash">Net Cash</string>
+    <string name="gross_sales">Gross Sales</string>
+    <string name="netSales_notax">Net Sales (no tax)</string>
+    <string name="tax">Tax</string>
+    <string name="netSals">Net Sals</string>
+    <string name="serviceDetail">Service Detail</string>
+    <string name="total_notax">Total  No Tax</string>
 </resources>

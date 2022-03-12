@@ -1,10 +1,13 @@
 package com.hiaryabeer.restaurantreports;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.google.android.material.card.MaterialCardView;
 
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         grouprepCard.setOnClickListener(onClickListener);
         cashrepCard.setOnClickListener(onClickListener);
         mostsalesepCard.setOnClickListener(onClickListener);
+        GeneralMethod generalMethod=new GeneralMethod(MainActivity.this,MainActivity.this);
+        generalMethod.setWindow();
 
 
     }
