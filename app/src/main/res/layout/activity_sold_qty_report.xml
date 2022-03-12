@@ -44,7 +44,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fromdate"
                 android:drawableEnd="@drawable/ic_date_range_black_24dp"
-
+                android:inputType="date"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
@@ -58,6 +58,7 @@
 
                 android:layout_weight="1.5"
                 android:text="@string/TOdate"/>
+
             <com.google.android.material.textfield.TextInputLayout
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -74,6 +75,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/todate"
                     android:drawableEnd="@drawable/ic_date_range_black_24dp"
+                    android:inputType="date"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -84,6 +86,7 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
+            android:visibility="gone"
             android:layout_height="match_parent">
 
             <TextView
@@ -159,16 +162,17 @@
 
 
                 android:layout_weight="1"
-                android:text="@string/casher"/>
+                android:text="@string/POSNO"/>
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/casheir"
+                android:id="@+id/PosNO"
                 android:layout_height="match_parent"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:text="Preivew"
+                android:id="@+id/Preivew"
                 android:textSize="11dp"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/primarycolor"
@@ -178,7 +182,31 @@
 
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
 
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textColor="@color/blue2"
+                android:textSize="12sp"
+                android:gravity="center"
+
+
+                android:layout_weight="1"
+                android:text="@string/Group"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/Group_Sp"
+                android:layout_height="match_parent"/>
+
+
+
+        </LinearLayout>
     </LinearLayout>
     <com.google.android.material.card.MaterialCardView
 
@@ -280,7 +308,6 @@
                         android:textColor="@color/primarytextcolor"
                         android:textSize="14sp" />
 
-
                     <TextView
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
@@ -288,9 +315,10 @@
                         android:fontFamily="@font/alegreya"
                         android:gravity="center"
                         android:lineHeight="19sp"
-                        android:text="@string/Group"
+                        android:text="@string/Hint"
                         android:textColor="@color/primarytextcolor"
                         android:textSize="14sp" />
+
 
 
                     <TextView
@@ -312,7 +340,7 @@
                         android:fontFamily="@font/alegreya"
                         android:gravity="center"
                         android:lineHeight="19sp"
-                        android:text="@string/NetPercent"
+                        android:text="@string/Service"
                         android:textColor="@color/primarytextcolor"
                         android:textSize="14sp" />
 
@@ -323,10 +351,29 @@
                         android:fontFamily="@font/alegreya"
                         android:gravity="center"
                         android:lineHeight="19sp"
-                        android:text="@string/NetTotal"
+                        android:text="@string/ServiceTax"
                         android:textColor="@color/primarytextcolor"
                         android:textSize="14sp" />
-
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/discount_"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/UnitPrice"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
                     <TextView
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
@@ -340,6 +387,28 @@
 
 
 
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/Grossperc"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alegreya"
+                        android:gravity="center"
+                        android:lineHeight="19sp"
+                        android:text="@string/Net"
+                        android:textColor="@color/primarytextcolor"
+                        android:textSize="14sp" />
+
+
                 </LinearLayout>
 
                 <TextView
@@ -349,7 +418,7 @@
                     android:background="@color/primarytextcolor" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/ordersDetalisRec"
+                    android:id="@+id/Rec"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
@@ -481,6 +550,17 @@ android:text="0.0"
                 android:gravity="center"
                 android:visibility="invisible"
                 android:layout_weight="1" />
+            <TextView
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:id="@+id/POSNO_respon"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:id="@+id/soldQty_Respon"
+                android:layout_height="match_parent"/>
+
 
         </TableRow>
     </LinearLayout>

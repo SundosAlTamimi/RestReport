@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="40dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/MODEL"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/Kind"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/item_Code"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/item_Name_"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/QTY"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/Hint"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/Tax"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/Service"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/Servicetax"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/discount_"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/UnitPrice"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/Gross"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/Grossperc"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/alegreya"
+            android:gravity="center"
+            android:lineHeight="19sp"
+            android:id="@+id/Net"
+            android:textColor="@color/primarytextcolor"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+</LinearLayout>
