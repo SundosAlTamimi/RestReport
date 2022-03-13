@@ -139,6 +139,7 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1"
+            android:gravity="center"
             android:layout_height="match_parent">
 
             <TextView
@@ -147,27 +148,25 @@
                 android:textColor="@color/blue2"
                 android:textSize="12sp"
                 android:gravity="center"
-
-
-                android:layout_weight="1"
+                android:layout_weight="1.4"
                 android:text="@string/POSNO"/>
+            <LinearLayout
+
+
+               android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:background="@drawable/back_border"
+                android:gravity="center"
+                android:orientation="horizontal">
+
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:id="@+id/PosNO"
                 android:layout_height="match_parent"/>
-<!--            <Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:text="Preivew"-->
-<!--                android:id="@+id/Preivew"-->
-<!--                android:textSize="11dp"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:backgroundTint="@color/primarycolor"-->
-<!--                android:layout_height="match_parent">-->
 
-<!--            </Button>-->
-
+        </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -251,7 +250,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
-
+            android:scrollbarThumbHorizontal="@drawable/scrollbar_vertical_thumb"
             android:orientation="vertical">
 
             <LinearLayout
@@ -454,18 +453,29 @@
         android:orientation="vertical"
         android:layout_weight="7"
         android:layout_height="match_parent">
-    <LinearLayout
+
+        <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_weight="1"
         android:layout_height="match_parent">
+       <HorizontalScrollView
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:scrollbarThumbHorizontal="@drawable/scrollbar_vertical_thumb"
+           android:fillViewport="true"
+           android:layout_centerHorizontal="true"
+           android:layout_marginHorizontal="26dp"
+           android:layout_width="match_parent">
         <TableRow
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="26dp"
             android:layout_width="match_parent">
             <TextView
                 android:layout_height="match_parent"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:textColor="@color/blue2"
                 android:textSize="12sp"
                 android:gravity="center"
@@ -476,7 +486,7 @@
 
             <TextView
                 android:layout_height="match_parent"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:textColor="@color/blue2"
                 android:textSize="12sp"
                 android:gravity="center"
@@ -486,7 +496,7 @@
                 android:id="@+id/totalgross"/>
             <TextView
                 android:layout_height="match_parent"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:textColor="@color/blue2"
                 android:textSize="12sp"
                 android:gravity="center"
@@ -495,7 +505,7 @@
                 android:text="@string/totaldiscount"/>
             <TextView
                 android:layout_height="match_parent"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:textColor="@color/blue2"
                 android:textSize="12sp"
                 android:gravity="center"
@@ -505,7 +515,7 @@
 
             <TextView
                 android:layout_height="match_parent"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:textColor="@color/blue2"
                 android:textSize="12sp"
                 android:gravity="center"
@@ -514,7 +524,7 @@
                 android:text="@string/Totaltax"/>
             <TextView
                 android:layout_height="match_parent"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:textColor="@color/blue2"
                 android:textSize="12sp"
                 android:gravity="center"
@@ -524,6 +534,7 @@
 
 
         </TableRow>
+       </HorizontalScrollView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

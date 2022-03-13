@@ -49,14 +49,14 @@ public class GroupReport extends AppCompatActivity {
     private List<String> groups;
     private SweetAlertDialog pDialog;
     public String headerDll = "", link = "";
-
+    GeneralMethod generalMethod;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_report);
 
         init();
-
+        generalMethod.setWindow();
         initDates();
 
         getAllSales(new GetSalesCallBack() {
@@ -347,6 +347,7 @@ public class GroupReport extends AppCompatActivity {
     }
 
     private void init() {
+        generalMethod=new GeneralMethod(GroupReport.this,GroupReport.this);
 
         groupTF = findViewById(R.id.groupTF);
         toDateTV = findViewById(R.id.toDateTV);
