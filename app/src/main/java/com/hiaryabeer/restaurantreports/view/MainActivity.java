@@ -1,4 +1,4 @@
-package com.hiaryabeer.restaurantreports;
+package com.hiaryabeer.restaurantreports.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -20,6 +20,10 @@ import android.widget.LinearLayout;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
+import com.hiaryabeer.restaurantreports.GeneralMethod;
+import com.hiaryabeer.restaurantreports.GroupReport;
+import com.hiaryabeer.restaurantreports.MostRecentSalesReport;
+import com.hiaryabeer.restaurantreports.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {

@@ -16,7 +16,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CashReport">
+    tools:context=".view.CashReport">
     <LinearLayout
         android:id="@+id/row2"
         android:layout_width="match_parent"
@@ -25,6 +25,18 @@
         android:padding="2dp"
         android:orientation="horizontal"
         >
+        <TextView
+            android:id="@+id/respon_pos_cash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/dark_blue"
+            android:layout_weight="2"
+            android:visibility="gone"
+            android:fontFamily="@font/alegreya"
+            android:background="@drawable/back_fillcolor"
+            android:gravity="center"
+            android:text="@string/sales"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -102,7 +114,7 @@
             android:layout_weight="0"
             android:gravity="center"
             android:fontFamily="@font/alegreya"
-            android:text="@string/userName"
+            android:text="@string/POSNO"
             android:textSize="14sp" />
         <LinearLayout
             android:id="@+id/row22"
@@ -119,7 +131,7 @@
             android:orientation="horizontal"
             >
         <Spinner
-            android:id="@+id/salesManSpinner"
+            android:id="@+id/salesManSpinner_cash"
             android:layout_width="match_parent"
             android:textSize="15sp"
             android:layout_height="match_parent"
@@ -176,11 +188,11 @@
                 android:fontFamily="@font/alegreya"
                 android:background="@drawable/back_fillcolor"
                 android:gravity="center"
-                android:text="@string/takeAway"
+                android:text="@string/sales"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/takeAway_text"
+                android:id="@+id/sales_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/alegreya"
@@ -208,11 +220,11 @@
                 android:fontFamily="@font/alegreya"
                 android:background="@drawable/back_fillcolor"
                 android:gravity="center"
-                android:text="@string/dineIn"
+                android:text="@string/returned"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/dineIn_text"
+                android:id="@+id/returned_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/alegreya"
@@ -236,16 +248,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@color/dark_blue"
+                android:textColor="@color/white"
                 android:layout_weight="2"
                 android:fontFamily="@font/alegreya"
-                android:background="@drawable/back_fillcolor"
+                android:background="@drawable/back_fill_dark"
                 android:gravity="center"
-                android:text="@string/delevery"
+                android:text="@string/net"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/delevery_text"
+                android:id="@+id/net_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/alegreya"
