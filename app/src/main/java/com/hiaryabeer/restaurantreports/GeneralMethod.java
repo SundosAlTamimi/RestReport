@@ -17,7 +17,7 @@ import java.util.Locale;
 
 public class GeneralMethod {
     public  Context context;
-    
+
     public  Activity myActivity;
     private Calendar myCalendar;
     public GeneralMethod(Context myContext, Activity activity){
