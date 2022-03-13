@@ -1,13 +1,20 @@
 package com.hiaryabeer.restaurantreports;
 
+import static android.content.Context.MODE_PRIVATE;
+import static com.hiaryabeer.restaurantreports.view.MainActivity.CONO_PREF;
+import static com.hiaryabeer.restaurantreports.view.MainActivity.IP_PREF;
+import static com.hiaryabeer.restaurantreports.view.MainActivity.IP_SETTINGS;
+
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.TextView;
-
+import android.content.SharedPreferences;
 import androidx.core.content.ContextCompat;
 
 import java.text.SimpleDateFormat;
@@ -17,6 +24,8 @@ import java.util.Locale;
 
 public class GeneralMethod {
     public  Context context;
+
+    public static String IpAddress, CoNo;
 
     public  Activity myActivity;
     private Calendar myCalendar;
@@ -75,5 +84,18 @@ public class GeneralMethod {
     public String convertToEnglish(String value) {
         String newValue = (((((((((((value + "").replaceAll("١", "1")).replaceAll("٢", "2")).replaceAll("٣", "3")).replaceAll("٤", "4")).replaceAll("٥", "5")).replaceAll("٦", "6")).replaceAll("٧", "7")).replaceAll("٨", "8")).replaceAll("٩", "9")).replaceAll("٠", "0").replaceAll("٫", "."));
         return newValue;
+    }
+    public boolean checkIpSettings() {
+
+        SharedPreferences sharedPref = context.getSharedPreferences(IP_SETTINGS, MODE_PRIVATE);
+        IpAddress = sharedPref.getString(IP_PREF, "");
+        CoNo = sharedPref.getString(CONO_PREF, "");
+
+        Log.e("IP_PREF", IpAddress + "");
+        Log.e("CONO_PREF", CoNo);
+
+        return !(IpAddress + "").trim().equals("") &&
+                !(CoNo + "").trim().equals("");
+
     }
 }

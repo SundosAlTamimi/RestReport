@@ -1,5 +1,7 @@
 package com.hiaryabeer.restaurantreports;
 
+import static com.hiaryabeer.restaurantreports.GeneralMethod.CoNo;
+import static com.hiaryabeer.restaurantreports.GeneralMethod.IpAddress;
 import static com.hiaryabeer.restaurantreports.view.CashReport.myBindingCash;
 
 import android.app.ProgressDialog;
@@ -37,9 +39,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class ImportData {
-   String IpAddress="10.0.0.22";
-   String ipPort="8085";
-   String CoNo="734";
+//   String IpAddress="10.0.0.22";
+//   String ipPort="8085";
+//   String CoNo="734";
    public String headerDll = "", link = "";
    private Context context;
    private ProgressDialog progressDialog;
@@ -50,7 +52,7 @@ public class ImportData {
    public  static  List<detailCashReport> detailCashReportList=new ArrayList<>();
    public ImportData(Context context) {
       this.context = context;
-      link = "http://" + IpAddress.trim() +":"+ ipPort.trim() + headerDll.trim();
+      link = "http://" + IpAddress.trim() ;
       Retrofit retrofit = RetrofitInstance.getInstance(link);
       myAPI = retrofit.create(ApiCash.class);
    }
@@ -87,7 +89,7 @@ public class ImportData {
             if (!IpAddress.equals("")) {
 
 
-               link = "http://" + IpAddress.trim() +":"+ ipPort.trim() + headerDll.trim() + "/GetPosNo?CONO=" + CoNo.trim();
+               link = "http://" + IpAddress.trim() + "/GetPosNo?CONO=" + CoNo.trim();
 
                Log.e("link", "" + link);
             }
@@ -263,7 +265,7 @@ String PosNo,FromD,ToD;
             //   http://localhost:8085/GetSoldQty?CONO=734&POSNO=0&D1=01/01/2021&D2=31/01/2021
 
                link =
-                 "http://" + IpAddress.trim() +":"+ ipPort.trim() +  headerDll.trim() +"/GetSoldQty?CONO="+CoNo.trim()+"&POSNO="+PosNo+"&D1="+FromD+"&D2="+ToD;
+                 "http://" + IpAddress.trim()  +"/GetSoldQty?CONO="+CoNo.trim()+"&POSNO="+PosNo+"&D1="+FromD+"&D2="+ToD;
 
                Log.e("link", "" +  link );
             }

@@ -26,6 +26,7 @@ import java.text.DecimalFormat;
 
 import com.hiaryabeer.restaurantreports.GeneralMethod;
 import com.hiaryabeer.restaurantreports.ImportData;
+import static com.hiaryabeer.restaurantreports.ImportData.posType;
 import com.hiaryabeer.restaurantreports.R;
 import com.hiaryabeer.restaurantreports.adapters.SoldQtyReportAdapter;
 import com.hiaryabeer.restaurantreports.model.SoldQtyReportModel;
@@ -135,6 +136,7 @@ else             Pos_No ="";
     void init() {
         generalMethod=new GeneralMethod(SoldQtyReport.this,SoldQtyReport.this);
 
+        generalMethod.checkIpSettings();
         group_lin=findViewById(R.id.group_lin);
         totaldiscount=findViewById(R.id.totaldiscount);
         totalgross=findViewById(R.id.totalgross);
@@ -152,6 +154,7 @@ else             Pos_No ="";
         PosNo_Sp = findViewById(R.id.PosNO);
         Preivew = findViewById(R.id.Preivew);
         importData = new ImportData(SoldQtyReport.this);
+        posType=2;
         importData.getPosNo();
         POSNO_respon.addTextChangedListener(new TextWatcher() {
             @Override
