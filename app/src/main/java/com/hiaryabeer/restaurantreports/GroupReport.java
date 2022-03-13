@@ -1,8 +1,9 @@
 package com.hiaryabeer.restaurantreports;
 
-import static com.hiaryabeer.restaurantreports.MainActivity.CONO_PREF;
-import static com.hiaryabeer.restaurantreports.MainActivity.IP_PREF;
-import static com.hiaryabeer.restaurantreports.MainActivity.IP_SETTINGS;
+
+import static com.hiaryabeer.restaurantreports.view.MainActivity.CONO_PREF;
+import static com.hiaryabeer.restaurantreports.view.MainActivity.IP_PREF;
+import static com.hiaryabeer.restaurantreports.view.MainActivity.IP_SETTINGS;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
