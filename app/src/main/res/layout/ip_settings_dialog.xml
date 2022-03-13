@@ -2,14 +2,26 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bg_top_radius"
-    >
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/settings_ic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/settings_ic"
+        android:translationZ="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="10dp"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/bg_top_radius"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,20 +29,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/ic_baseline_settings_24" />
 
         <TextView
+            android:id="@+id/settingsTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alegreya_sans_bold"
             android:letterSpacing="0.1"
             android:text="IP Settings"
             android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="43dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputIpAddress"
@@ -46,7 +58,10 @@
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
             app:boxStrokeColor="@color/primarycolor"
-            app:hintTextColor="@color/primarycolor">
+            app:hintTextColor="@color/primarycolor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settingsTV">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ipEdt"
@@ -71,7 +86,10 @@
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
             app:boxStrokeColor="@color/primarycolor"
-            app:hintTextColor="@color/primarycolor">
+            app:hintTextColor="@color/primarycolor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputIpAddress">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/coNoEdt"
@@ -92,9 +110,13 @@
             android:text="Submit"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputCoNo" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

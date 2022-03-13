@@ -1,6 +1,7 @@
 package com.hiaryabeer.restaurantreports.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
@@ -28,7 +29,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
     MaterialCardView soldqtyrepCard, grouprepCard, cashrepCard, mostsalesepCard;
-    LinearLayout ipSettings_layout;
+    ConstraintLayout ipSettings_layout;
 
     public final static String IP_SETTINGS = "IP_SETTINGS";
     public final static String IP_PREF = "IP_Address";
