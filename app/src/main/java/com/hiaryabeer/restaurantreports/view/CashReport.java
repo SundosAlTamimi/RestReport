@@ -43,8 +43,11 @@ public class CashReport extends AppCompatActivity {
     }
 
     private void setInitialView() {
-        importData=new ImportData(this);
         generalMethod=new GeneralMethod(CashReport.this,CashReport.this);
+        generalMethod.checkIpSettings();
+        importData=new ImportData(this);
+
+
         myBindingCash.fromDateR.setText(generalMethod.DateInToday());
         myBindingCash.toDateR.setText(generalMethod.DateInToday());
         myBindingCash.showBtn.setOnClickListener(new View.OnClickListener() {
