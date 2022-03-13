@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="6"
+        android:layout_marginTop="20dp"
         android:padding="2dp"
         android:orientation="horizontal"
         >
@@ -173,6 +174,7 @@
         android:gravity="center"
        android:layout_marginRight="10dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         >
         <LinearLayout
@@ -280,12 +282,14 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
 
-            android:layout_height="1dp" android:layout_width="match_parent"/>
+            android:layout_height="1dp"
+            android:layout_width="match_parent"/>
 
 
         <LinearLayout
             android:layout_height="40dp"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:orientation="horizontal"
             android:layout_margin="5dp">
             <TextView
@@ -321,6 +325,7 @@
             android:layout_height="40dp"
             android:layout_width="match_parent"
             android:orientation="horizontal"
+            android:visibility="gone"
             android:layout_margin="5dp">
             <TextView
                 android:layout_width="match_parent"
@@ -355,6 +360,7 @@
             android:layout_height="40dp"
             android:layout_width="match_parent"
             android:orientation="horizontal"
+            android:visibility="gone"
             android:layout_margin="5dp">
             <TextView
                 android:layout_width="match_parent"
@@ -386,6 +392,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_height="40dp"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_margin="5dp">
@@ -420,6 +427,7 @@
         <com.google.android.material.divider.MaterialDivider
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
+            android:visibility="gone"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
 
@@ -429,6 +437,7 @@
         <LinearLayout
             android:layout_height="40dp"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:orientation="horizontal"
             android:layout_margin="5dp">
             <TextView
@@ -464,6 +473,7 @@
         <LinearLayout
             android:layout_height="40dp"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:orientation="horizontal"
             android:layout_margin="5dp">
             <TextView
@@ -499,6 +509,7 @@
             android:layout_height="40dp"
             android:layout_width="match_parent"
             android:orientation="horizontal"
+            android:visibility="gone"
             android:layout_margin="5dp">
             <TextView
                 android:layout_width="match_parent"
@@ -532,6 +543,7 @@
         <LinearLayout
             android:layout_height="40dp"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:orientation="horizontal"
             android:layout_margin="5dp">
             <TextView
@@ -581,7 +593,7 @@
 
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:text="@string/serviceDetail"
+            android:text="@string/cashDetail"
             android:textSize="14sp"
             />
         <LinearLayout
@@ -604,15 +616,49 @@
 
                 android:background="@drawable/back_fillcolor"
                 android:gravity="center"
-                android:text="@string/takeAway"
+                android:text="@string/name"
+                android:textSize="14sp"
+                />
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+
+                android:layout_height="match_parent"
+                android:layout_width="2dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/dark_blue"
+                android:layout_weight="2"
+                android:fontFamily="@font/alegreya_sans_bold"
+
+                android:background="@drawable/back_fillcolor"
+                android:gravity="center"
+                android:text="@string/amount"
                 android:textSize="14sp"
                 />
 
-
         </LinearLayout>
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="2dp"
+
+                android:layout_height="2dp"
+                android:layout_width="match_parent"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cash_detail_recycle"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:padding="3dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         <LinearLayout
             android:layout_height="40dp"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:orientation="horizontal"
             android:layout_margin="5dp">
 
@@ -646,6 +692,7 @@
         <LinearLayout
             android:layout_height="40dp"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:orientation="horizontal"
             android:layout_margin="5dp">
             <TextView
@@ -681,6 +728,7 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
+                android:visibility="gone"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
 
@@ -690,6 +738,7 @@
                 android:layout_height="40dp"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
+                android:visibility="gone"
                 android:layout_margin="5dp">
                 <TextView
                     android:layout_width="match_parent"
@@ -710,6 +759,7 @@
                 android:layout_height="40dp"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
+                android:visibility="gone"
                 android:layout_margin="5dp">
                 <TextView
                     android:layout_width="match_parent"
@@ -743,6 +793,7 @@
                 android:layout_height="40dp"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
+                android:visibility="gone"
                 android:layout_margin="5dp">
                 <TextView
                     android:layout_width="match_parent"

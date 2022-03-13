@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.conn.HttpHostConnectException;
 import com.hiaryabeer.restaurantreports.model.SoldQtyReportModel;
+import com.hiaryabeer.restaurantreports.model.detailCashReport;
 import com.hiaryabeer.restaurantreports.model.totalCashModel;
 import com.hiaryabeer.restaurantreports.view.CashReport;
 import com.hiaryabeer.restaurantreports.view.SoldQtyReport;
@@ -46,6 +47,7 @@ public class ImportData {
    public static ArrayList<String>POSNOList=new ArrayList<>();
    public  ApiCash myAPI;
    public  static  int posType=0;
+   public  static  List<detailCashReport> detailCashReportList=new ArrayList<>();
    public ImportData(Context context) {
       this.context = context;
       link = "http://" + IpAddress.trim() +":"+ ipPort.trim() + headerDll.trim();
@@ -419,6 +421,8 @@ String PosNo,FromD,ToD;
                myBindingCash.salesText.setText(response.body().get(0).getSALES());
                myBindingCash.returnedText.setText(response.body().get(0).getRETURNED());
                myBindingCash.netText.setText(response.body().get(0).getNET());
+
+               fetchCashDetailData(from, toDat, pos);
 //             Log.e("onResponse", "=" + response.body().get(0).getSALES());
 
             }
@@ -426,6 +430,32 @@ String PosNo,FromD,ToD;
 
          @Override
          public void onFailure(Call<List<totalCashModel>> call, Throwable throwable) {
+            Log.e("onFailure", "=" + throwable.getMessage());
+            Toast.makeText(context, "throwable"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
+         }
+      });
+   }
+   public void fetchCashDetailData(String from,String toDat,String pos) {
+
+      Call<List<detailCashReport>> myData = myAPI.gaCashInfoDetail(CoNo,from,toDat,pos+"");
+
+      myData.enqueue(new Callback<List<detailCashReport>>() {
+         @Override
+         public void onResponse(Call<List<detailCashReport>> call, Response<List<detailCashReport>> response) {
+            if (!response.isSuccessful()) {
+               Log.e("onResponse", "not=" + response.message());
+            } else {
+               detailCashReportList.clear();
+               detailCashReportList.addAll(response.body());
+               myBindingCash.responPosCash.setText("fill");
+
+             Log.e("onResponse", "gaCashInfoDetail=" + response.body().size());
+
+            }
+         }
+
+         @Override
+         public void onFailure(Call<List<detailCashReport>> call, Throwable throwable) {
             Log.e("onFailure", "=" + throwable.getMessage());
             Toast.makeText(context, "throwable"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
          }

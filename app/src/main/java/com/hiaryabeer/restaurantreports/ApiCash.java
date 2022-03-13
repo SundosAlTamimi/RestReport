@@ -1,5 +1,6 @@
 package com.hiaryabeer.restaurantreports;
 
+import com.hiaryabeer.restaurantreports.model.detailCashReport;
 import com.hiaryabeer.restaurantreports.model.totalCashModel;
 
 import java.util.List;
@@ -13,4 +14,8 @@ public interface ApiCash {
     @GET("GetPOSCASH")
     Call<List<totalCashModel>> gaCashInfo(@Query("CONO") String ComNo, @Query("D1") String from,
                                           @Query("D2") String toDate, @Query("POSNO") String Pos );
+
+    @GET("GetPOSCASHDTLS")
+    Call<List<detailCashReport>> gaCashInfoDetail(@Query("CONO") String ComNo, @Query("D1") String from,
+                                                  @Query("D2") String toDate, @Query("POSNO") String Pos );
 }

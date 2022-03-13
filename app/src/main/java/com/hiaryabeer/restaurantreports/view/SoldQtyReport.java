@@ -24,6 +24,7 @@ import java.text.DecimalFormat;
 import com.hiaryabeer.restaurantreports.ImportData;
 import com.hiaryabeer.restaurantreports.R;
 import com.hiaryabeer.restaurantreports.adapters.SoldQtyReportAdapter;
+import com.hiaryabeer.restaurantreports.model.SoldQtyReportModel;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
