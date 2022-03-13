@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -19,6 +20,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import com.hiaryabeer.restaurantreports.ImportData;
@@ -34,6 +36,7 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 public class SoldQtyReport extends AppCompatActivity {
     ImportData importData;
     TextView FromDate, ToDate;
@@ -48,12 +51,14 @@ public class SoldQtyReport extends AppCompatActivity {
     ArrayList<String>Grouplist=new ArrayList<>();
  ArrayList<SoldQtyReportModel>FiltersoldQtylist=new ArrayList<>();
  LinearLayout group_lin;
-
+    GeneralMethod generalMethod;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sold_qty_report);
+
         init();
+        generalMethod.setWindow();
         myCalendar = Calendar.getInstance();
         group_lin.setVisibility(View.GONE);
         Date currentTimeAndDate = Calendar.getInstance().getTime();
@@ -126,6 +131,8 @@ else             Pos_No ="";
     }
 
     void init() {
+        generalMethod=new GeneralMethod(SoldQtyReport.this,SoldQtyReport.this);
+
         group_lin=findViewById(R.id.group_lin);
         totaldiscount=findViewById(R.id.totaldiscount);
         totalgross=findViewById(R.id.totalgross);
@@ -190,7 +197,23 @@ else             Pos_No ="";
                     fillGroupSp();
 
                 }else{
+                    new SweetAlertDialog(SoldQtyReport.this, SweetAlertDialog.WARNING_TYPE)
 
+                            .setContentText("No Data")
+
+                            .setConfirmButton("Ok", new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                    try {
+
+                                        sweetAlertDialog.dismiss();
+                                    }catch (Exception e){
+
+                                    }
+                                }
+                            })
+                            .setConfirmButtonBackgroundColor(getResources().getColor(R.color.primarycolor))
+                            .show();
                 }
             }
         });

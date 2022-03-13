@@ -36,7 +36,7 @@ public class GeneralMethod {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
 // finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(context,R.color.blue));
+        window.setStatusBarColor(ContextCompat.getColor(context,R.color.primarytextcolor));
 
     }
     public  String DateInToday(){
