@@ -1,4 +1,4 @@
-package com.hiaryabeer.restaurantreports;
+package com.hiaryabeer.restaurantreports.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +23,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import com.hiaryabeer.restaurantreports.ImportData;
+import com.hiaryabeer.restaurantreports.R;
+import com.hiaryabeer.restaurantreports.adapters.SoldQtyReportAdapter;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;

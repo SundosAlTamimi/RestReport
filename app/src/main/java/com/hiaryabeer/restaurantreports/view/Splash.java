@@ -1,10 +1,12 @@
-package com.hiaryabeer.restaurantreports;
+package com.hiaryabeer.restaurantreports.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.hiaryabeer.restaurantreports.R;
 
 public class Splash extends AppCompatActivity {
 

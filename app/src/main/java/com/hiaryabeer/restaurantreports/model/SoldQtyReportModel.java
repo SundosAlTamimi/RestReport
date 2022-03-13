@@ -1,6 +1,6 @@
-package com.hiaryabeer.restaurantreports;
+package com.hiaryabeer.restaurantreports.model;
 
-class SoldQtyReportModel {
+public class SoldQtyReportModel {
    String Kind;
    String Model;
    String ItemCode;

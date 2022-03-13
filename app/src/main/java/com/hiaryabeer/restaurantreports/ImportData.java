@@ -1,5 +1,7 @@
 package com.hiaryabeer.restaurantreports;
 
+import static com.hiaryabeer.restaurantreports.view.CashReport.myBindingCash;
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -9,6 +11,10 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.conn.HttpHostConnectException;
+import com.hiaryabeer.restaurantreports.model.SoldQtyReportModel;
+import com.hiaryabeer.restaurantreports.model.totalCashModel;
+import com.hiaryabeer.restaurantreports.view.CashReport;
+import com.hiaryabeer.restaurantreports.view.SoldQtyReport;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -22,6 +28,12 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class ImportData {
    String IpAddress="10.0.0.22";
@@ -32,8 +44,13 @@ public class ImportData {
    private ProgressDialog progressDialog;
    public static ArrayList<SoldQtyReportModel>soldQtyreportModelList=new ArrayList<>();
    public static ArrayList<String>POSNOList=new ArrayList<>();
+   public  ApiCash myAPI;
+   public  static  int posType=0;
    public ImportData(Context context) {
       this.context = context;
+      link = "http://" + IpAddress.trim() +":"+ ipPort.trim() + headerDll.trim();
+      Retrofit retrofit = RetrofitInstance.getInstance(link);
+      myAPI = retrofit.create(ApiCash.class);
    }
    public void getSoldQtyReportData(String PosNo,String FromD,String ToD) {
 
@@ -195,6 +212,10 @@ public class ImportData {
                            e.printStackTrace();
                         }
                      }
+                  if(posType==1)
+                  {
+                     myBindingCash.responPosCash.setText("POSNO");
+                  }else
                   SoldQtyReport.POSNO_respon.setText("POSNO");
                }
 
@@ -384,4 +405,30 @@ String PosNo,FromD,ToD;
 
    }
 
+
+   public void fetchCallData(String from,String toDat,String pos) {
+
+      Call<List<totalCashModel>> myData = myAPI.gaCashInfo(CoNo,from,toDat,pos+"");
+
+      myData.enqueue(new Callback<List<totalCashModel>>() {
+         @Override
+         public void onResponse(Call<List<totalCashModel>> call, Response<List<totalCashModel>> response) {
+            if (!response.isSuccessful()) {
+               Log.e("onResponse", "not=" + response.message());
+            } else {
+               myBindingCash.salesText.setText(response.body().get(0).getSALES());
+               myBindingCash.returnedText.setText(response.body().get(0).getRETURNED());
+               myBindingCash.netText.setText(response.body().get(0).getNET());
+//             Log.e("onResponse", "=" + response.body().get(0).getSALES());
+
+            }
+         }
+
+         @Override
+         public void onFailure(Call<List<totalCashModel>> call, Throwable throwable) {
+            Log.e("onFailure", "=" + throwable.getMessage());
+            Toast.makeText(context, "throwable"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
+         }
+      });
+   }
 }
