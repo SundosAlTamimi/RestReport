@@ -6,6 +6,7 @@ import static com.hiaryabeer.restaurantreports.view.CashReport.myBindingCash;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
@@ -33,6 +34,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -50,6 +52,7 @@ public class ImportData {
    public  ApiCash myAPI;
    public  static  int posType=0;
    public  static  List<detailCashReport> detailCashReportList=new ArrayList<>();
+   SweetAlertDialog pDialog;
    public ImportData(Context context) {
       this.context = context;
       link = "http://" + IpAddress.trim() ;
@@ -411,12 +414,18 @@ String PosNo,FromD,ToD;
 
 
    public void fetchCallData(String from,String toDat,String pos) {
+      pDialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
 
+      pDialog.getProgressHelper().setBarColor(Color.parseColor("#31AFB4"));
+      pDialog.setTitleText("Loading ...1");
+      pDialog.setCancelable(false);
+      pDialog.show();
       Call<List<totalCashModel>> myData = myAPI.gaCashInfo(CoNo,from,toDat,pos+"");
 
       myData.enqueue(new Callback<List<totalCashModel>>() {
          @Override
          public void onResponse(Call<List<totalCashModel>> call, Response<List<totalCashModel>> response) {
+            pDialog.dismissWithAnimation();
             if (!response.isSuccessful()) {
                Log.e("onResponse", "not=" + response.message());
             } else {
@@ -433,17 +442,24 @@ String PosNo,FromD,ToD;
          @Override
          public void onFailure(Call<List<totalCashModel>> call, Throwable throwable) {
             Log.e("onFailure", "=" + throwable.getMessage());
+            pDialog.dismissWithAnimation();
             Toast.makeText(context, "throwable"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
          }
       });
    }
    public void fetchCashDetailData(String from,String toDat,String pos) {
+      pDialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
 
+      pDialog.getProgressHelper().setBarColor(Color.parseColor("#31AFB4"));
+      pDialog.setTitleText("Loading ...2");
+      pDialog.setCancelable(false);
+      pDialog.show();
       Call<List<detailCashReport>> myData = myAPI.gaCashInfoDetail(CoNo,from,toDat,pos+"");
 
       myData.enqueue(new Callback<List<detailCashReport>>() {
          @Override
          public void onResponse(Call<List<detailCashReport>> call, Response<List<detailCashReport>> response) {
+            pDialog.dismissWithAnimation();
             if (!response.isSuccessful()) {
                Log.e("onResponse", "not=" + response.message());
             } else {
@@ -458,6 +474,7 @@ String PosNo,FromD,ToD;
 
          @Override
          public void onFailure(Call<List<detailCashReport>> call, Throwable throwable) {
+            pDialog.dismissWithAnimation();
             Log.e("onFailure", "=" + throwable.getMessage());
             Toast.makeText(context, "throwable"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
          }
