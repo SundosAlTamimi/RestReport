@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSettingsDialog() {
 
-        BottomSheetDialog dialog = new BottomSheetDialog(MainActivity.this);
+        BottomSheetDialog dialog = new BottomSheetDialog(MainActivity.this, R.style.SheetDialog);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.ip_settings_dialog);
 
@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         dialog.getWindow().setAttributes(lp);
 
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+
 
         dialog.show();
 
