@@ -36,10 +36,10 @@
         <activity
             android:name=".SoldQtyReport"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
-            android:windowSoftInputMode="adjustPan|adjustResize"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            android:exported="false" />
+            android:windowSoftInputMode="adjustPan|adjustResize"
+            />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

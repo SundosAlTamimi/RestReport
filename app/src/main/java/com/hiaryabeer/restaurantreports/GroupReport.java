@@ -1,10 +1,15 @@
 package com.hiaryabeer.restaurantreports;
 
+import static com.hiaryabeer.restaurantreports.MainActivity.CONO_PREF;
+import static com.hiaryabeer.restaurantreports.MainActivity.IP_PREF;
+import static com.hiaryabeer.restaurantreports.MainActivity.IP_SETTINGS;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,6 +54,7 @@ public class GroupReport extends AppCompatActivity {
     private List<String> groups;
     private SweetAlertDialog pDialog;
     public String headerDll = "", link = "";
+    private String ipAddress, coNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,120 +65,133 @@ public class GroupReport extends AppCompatActivity {
 
         initDates();
 
-        getAllSales(new GetSalesCallBack() {
-                        @Override
-                        public void onResponse(JSONArray response) {
+        if (checkIpSettings()) {
+            getAllSales(new GetSalesCallBack() {
+                            @Override
+                            public void onResponse(JSONArray response) {
 
-                            groupSales_List.clear();
-                            groups.clear();
+                                groupSales_List.clear();
+                                groups.clear();
 
-                            try {
+                                try {
 
-                                for (int i = 0; i < response.length(); i++) {
+                                    for (int i = 0; i < response.length(); i++) {
 
-                                    groupSales_List.add(new GroupSales_Model(
-                                            response.getJSONObject(i).getString("ITEMK"),
-                                            response.getJSONObject(i).getString("ITEMM"),
-                                            response.getJSONObject(i).getString("ITEMG"),
-                                            response.getJSONObject(i).getString("QTY"),
-                                            response.getJSONObject(i).getString("GROSS"),
-                                            response.getJSONObject(i).getString("GROSSSUM"),
-                                            response.getJSONObject(i).getString("DISC"),
-                                            response.getJSONObject(i).getString("TOTAFTRDISC"),
-                                            response.getJSONObject(i).getString("TAX"),
-                                            response.getJSONObject(i).getString("NET"),
-                                            "",
-                                            fromDateTV.getText().toString(),
-                                            toDateTV.getText().toString(),
-                                            response.getJSONObject(i).getString("SERVICE"),
-                                            response.getJSONObject(i).getString("SERVICETAX")
-                                    ));
+                                        groupSales_List.add(new GroupSales_Model(
+                                                response.getJSONObject(i).getString("ITEMK"),
+                                                response.getJSONObject(i).getString("ITEMM"),
+                                                response.getJSONObject(i).getString("ITEMG"),
+                                                response.getJSONObject(i).getString("QTY"),
+                                                response.getJSONObject(i).getString("GROSS"),
+                                                response.getJSONObject(i).getString("GROSSSUM"),
+                                                response.getJSONObject(i).getString("DISC"),
+                                                response.getJSONObject(i).getString("TOTAFTRDISC"),
+                                                response.getJSONObject(i).getString("TAX"),
+                                                response.getJSONObject(i).getString("NET"),
+                                                "",
+                                                fromDateTV.getText().toString(),
+                                                toDateTV.getText().toString(),
+                                                response.getJSONObject(i).getString("SERVICE"),
+                                                response.getJSONObject(i).getString("SERVICETAX")
+                                        ));
 
-                                    groups.add(response.getJSONObject(i).getString("ITEMG"));
+                                        groups.add(response.getJSONObject(i).getString("ITEMG"));
 
+
+                                    }
+
+                                    updateAdapter();
+                                    totalGross.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getGross).mapToDouble(Double::parseDouble).sum()));
+                                    totalTax.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getTax).mapToDouble(Double::parseDouble).sum()));
+                                    totalDisc.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getDiscount).mapToDouble(Double::parseDouble).sum()));
+                                    totService.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getService).mapToDouble(Double::parseDouble).sum()));
+                                    totServiceTax.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getService_tax).mapToDouble(Double::parseDouble).sum()));
+                                    updateGroupList();
+
+                                } catch (JSONException e) {
 
                                 }
 
-                                updateAdapter();
-                                totalGross.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getGross).mapToDouble(Double::parseDouble).sum()));
-                                totalTax.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getTax).mapToDouble(Double::parseDouble).sum()));
-                                totalDisc.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getDiscount).mapToDouble(Double::parseDouble).sum()));
-                                totService.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getService).mapToDouble(Double::parseDouble).sum()));
-                                totServiceTax.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getService_tax).mapToDouble(Double::parseDouble).sum()));
-                                updateGroupList();
-
-                            } catch (JSONException e) {
 
                             }
 
+                            @Override
+                            public void onError(String error) {
 
-                        }
+                            }
+                        }, ipAddress, coNo,
+                    fromDateTV.getText().toString(), toDateTV.getText().toString());
+        } else {
 
-                        @Override
-                        public void onError(String error) {
+            showSweetDialog(GroupReport.this, 3, "", "IP Address Not Found !");
 
-                        }
-                    }, "10.0.0.22", "8085", "734",
-                fromDateTV.getText().toString(), toDateTV.getText().toString());
+        }
 
         showBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                getAllSales(new GetSalesCallBack() {
-                                @Override
-                                public void onResponse(JSONArray response) {
+                if (checkIpSettings()) {
 
-                                    groupSales_List.clear();
-                                    groups.clear();
+                    getAllSales(new GetSalesCallBack() {
+                                    @Override
+                                    public void onResponse(JSONArray response) {
 
-                                    try {
+                                        groupSales_List.clear();
+                                        groups.clear();
 
-                                        for (int i = 0; i < response.length(); i++) {
+                                        try {
 
-                                            groupSales_List.add(new GroupSales_Model(
-                                                    response.getJSONObject(i).getString("ITEMK"),
-                                                    response.getJSONObject(i).getString("ITEMM"),
-                                                    response.getJSONObject(i).getString("ITEMG"),
-                                                    response.getJSONObject(i).getString("QTY"),
-                                                    response.getJSONObject(i).getString("GROSS"),
-                                                    response.getJSONObject(i).getString("GROSSSUM"),
-                                                    response.getJSONObject(i).getString("DISC"),
-                                                    response.getJSONObject(i).getString("TOTAFTRDISC"),
-                                                    response.getJSONObject(i).getString("TAX"),
-                                                    response.getJSONObject(i).getString("NET"),
-                                                    "",
-                                                    fromDateTV.getText().toString(),
-                                                    toDateTV.getText().toString(),
-                                                    response.getJSONObject(i).getString("SERVICE"),
-                                                    response.getJSONObject(i).getString("SERVICETAX")
-                                            ));
+                                            for (int i = 0; i < response.length(); i++) {
 
-                                            groups.add(response.getJSONObject(i).getString("ITEMG"));
+                                                groupSales_List.add(new GroupSales_Model(
+                                                        response.getJSONObject(i).getString("ITEMK"),
+                                                        response.getJSONObject(i).getString("ITEMM"),
+                                                        response.getJSONObject(i).getString("ITEMG"),
+                                                        response.getJSONObject(i).getString("QTY"),
+                                                        response.getJSONObject(i).getString("GROSS"),
+                                                        response.getJSONObject(i).getString("GROSSSUM"),
+                                                        response.getJSONObject(i).getString("DISC"),
+                                                        response.getJSONObject(i).getString("TOTAFTRDISC"),
+                                                        response.getJSONObject(i).getString("TAX"),
+                                                        response.getJSONObject(i).getString("NET"),
+                                                        "",
+                                                        fromDateTV.getText().toString(),
+                                                        toDateTV.getText().toString(),
+                                                        response.getJSONObject(i).getString("SERVICE"),
+                                                        response.getJSONObject(i).getString("SERVICETAX")
+                                                ));
+
+                                                groups.add(response.getJSONObject(i).getString("ITEMG"));
+
+                                            }
+
+                                            updateAdapter();
+                                            totalGross.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getGross).mapToDouble(Double::parseDouble).sum()));
+                                            totalTax.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getTax).mapToDouble(Double::parseDouble).sum()));
+                                            totalDisc.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getDiscount).mapToDouble(Double::parseDouble).sum()));
+                                            totService.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getService).mapToDouble(Double::parseDouble).sum()));
+                                            totServiceTax.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getService_tax).mapToDouble(Double::parseDouble).sum()));
+                                            updateGroupList();
+
+                                        } catch (JSONException e) {
 
                                         }
 
-                                        updateAdapter();
-                                        totalGross.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getGross).mapToDouble(Double::parseDouble).sum()));
-                                        totalTax.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getTax).mapToDouble(Double::parseDouble).sum()));
-                                        totalDisc.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getDiscount).mapToDouble(Double::parseDouble).sum()));
-                                        totService.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getService).mapToDouble(Double::parseDouble).sum()));
-                                        totServiceTax.setText(String.valueOf(groupSales_List.stream().map(GroupSales_Model::getService_tax).mapToDouble(Double::parseDouble).sum()));
-                                        updateGroupList();
-
-                                    } catch (JSONException e) {
 
                                     }
 
+                                    @Override
+                                    public void onError(String error) {
 
-                                }
+                                    }
+                                }, ipAddress, coNo,
+                            fromDateTV.getText().toString(), toDateTV.getText().toString());
+                } else {
 
-                                @Override
-                                public void onError(String error) {
+                    showSweetDialog(GroupReport.this, 3, "", "IP Address Not Found !");
 
-                                }
-                            }, "10.0.0.22", "8085", "734",
-                        fromDateTV.getText().toString(), toDateTV.getText().toString());
+                }
 
 
             }
@@ -266,6 +285,21 @@ public class GroupReport extends AppCompatActivity {
 
     }
 
+    private boolean checkIpSettings() {
+
+        SharedPreferences sharedPref = getSharedPreferences(IP_SETTINGS, MODE_PRIVATE);
+        ipAddress = sharedPref.getString(IP_PREF, "");
+        coNo = sharedPref.getString(CONO_PREF, "");
+
+        Log.e("IP_PREF", ipAddress + "");
+        Log.e("CONO_PREF", coNo);
+
+        return !(ipAddress + "").trim().equals("") &&
+                !(coNo + "").trim().equals("");
+
+    }
+
+
     private interface GetSalesCallBack {
 
         void onResponse(JSONArray response);
@@ -275,7 +309,7 @@ public class GroupReport extends AppCompatActivity {
     }
 
 
-    private void getAllSales(GetSalesCallBack getSalesCallBack, String ipAddress, String ipPort, String coNo,
+    private void getAllSales(GetSalesCallBack getSalesCallBack, String ipAddress, String coNo,
                              String fromDate, String toDate) {
 
         pDialog = new SweetAlertDialog(GroupReport.this, SweetAlertDialog.PROGRESS_TYPE);
@@ -287,8 +321,8 @@ public class GroupReport extends AppCompatActivity {
 
         // http://10.0.0.22:8085/GetGroupSales?CONO=734&D1=01/01/2021&D2=31/01/2021
 
-        if (!ipAddress.equals("") || !ipPort.equals("") || !coNo.equals(""))
-            link = "http://" + ipAddress + ":" + ipPort + headerDll.trim() + "/GetGroupSales?CONO=" + coNo + "&D1=" + fromDate + "&D2=" + toDate;
+        if (!ipAddress.equals("") || !coNo.equals(""))
+            link = "http://" + ipAddress + "/GetGroupSales?CONO=" + coNo + "&D1=" + fromDate + "&D2=" + toDate;
 
         Log.e("getGroupSales_Link", link);
 
@@ -335,6 +369,10 @@ public class GroupReport extends AppCompatActivity {
 
                     showSweetDialog(GroupReport.this, 3, "", "No Data Found");
 
+                } else {
+
+                    showSweetDialog(GroupReport.this, 3, "", error.getMessage() +"");
+
                 }
                 Log.e("getGroupSales_Error", error.getMessage() + "");
 
@@ -379,7 +417,7 @@ public class GroupReport extends AppCompatActivity {
     private void updateGroupList() {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-               android.R.layout.simple_spinner_dropdown_item, groups);
+                android.R.layout.simple_spinner_dropdown_item, groups);
 
         Log.e("group_list", groups.toString());
 
